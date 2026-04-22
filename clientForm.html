@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Information Form | Big Dream</title>
+  <meta name="description" content="Client information form for Big Dream Education & Visa Services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
+</head>
+<body data-page="client-form">
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html"><img src="assets/bdLogo.png" alt="Big Dream logo"><span class="brand-text"><strong>Big Dream</strong><span>Education &amp; Visa Services</span></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blogListing.html">Blog</a><a href="clientForm.html">Client Form</a><a href="contactUs.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Client Form</p>
+        <h1>Client Information Form</h1>
+        <p>This online form follows the fields outlined in the content pack and is designed to stay simple, mobile-friendly, and easy to complete.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <form class="form-card form-card-large" action="https://formsubmit.co/admin@bigdreamvisa.com.au" method="POST">
+          <input type="hidden" name="_subject" value="Big Dream client information form">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <h2>Client details</h2>
+          <div class="form-grid">
+            <label>Title<input type="text" name="Title"></label>
+            <label>Surname<input type="text" name="Surname" required></label>
+            <label>First name(s)<input type="text" name="First name(s)" required></label>
+            <label>Date of birth<input type="date" name="Date of birth"></label>
+            <label>Nationality<input type="text" name="Nationality"></label>
+            <label>Passport number<input type="text" name="Passport number"></label>
+            <label class="full-span">Residential address<textarea name="Residential address" rows="3"></textarea></label>
+            <label class="full-span">Postal address<textarea name="Postal address" rows="3"></textarea></label>
+            <label>Qualification<input type="text" name="Qualification"></label>
+            <label>College or university<input type="text" name="College or university"></label>
+            <label>Occupation<input type="text" name="Occupation"></label>
+            <label>Mobile<input type="tel" name="Mobile"></label>
+            <label>Home phone<input type="tel" name="Home phone"></label>
+            <label>Work phone<input type="tel" name="Work phone"></label>
+            <label>Email<input type="email" name="Email" required></label>
+            <label class="full-span">Family member details<textarea name="Family member details" rows="4" placeholder="Full name, date of birth, and relationship"></textarea></label>
+            <label>Current visa subclass<input type="text" name="Current visa subclass"></label>
+            <label>Visa expiry date<input type="date" name="Visa expiry date"></label>
+            <label class="full-span">Visa conditions<textarea name="Visa conditions" rows="3"></textarea></label>
+            <label class="full-span">Immigration history<textarea name="Immigration history" rows="4" placeholder="Any refusals, cancellations, or issues with the Department"></textarea></label>
+            <label class="full-span">Sponsor details<textarea name="Sponsor details" rows="4" placeholder="Name, business, address, phone, and email if sponsored"></textarea></label>
+            <label class="full-span">Migration issue or query<textarea name="Migration issue or query" rows="5"></textarea></label>
+          </div>
+          <div class="checkbox-stack">
+            <label><input type="checkbox" name="Initial consultation acknowledgement" required> I understand this consultation does not create a client relationship until a formal engagement contract is signed.</label>
+            <label><input type="checkbox" name="VEVO permission"> I give permission for a VEVO search if required.</label>
+            <label><input type="checkbox" name="Consumer guide acknowledgement"> I acknowledge that the Consumer Guide has been provided where applicable.</label>
+          </div>
+          <button class="btn" type="submit">Submit Client Information</button>
+        </form>
+
+        <aside class="info-stack">
+          <div class="info-card">
+            <h3>Payment details shown on form</h3>
+            <p>Account Name: Big Dream Education Pty Ltd</p>
+            <p>BSB: 062692</p>
+            <p>Account: 78357321</p>
+            <p>SWIFT Code: CTBAAU2S</p>
+            <p>Pay ID: 11 669 816 479</p>
+          </div>
+          <div class="info-card">
+            <h3>Useful links</h3>
+            <p><a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noreferrer">Registered Migration Agent</a></p>
+            <p><a href="https://www.legislation.gov.au/F2021L00357/latest/text" target="_blank" rel="noreferrer">Migration Agent Code of Conduct</a></p>
+            <p><a href="https://www.omara.gov.au/consumer-information" target="_blank" rel="noreferrer">Migration Agent Consumer Guide</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><p>&copy; <span data-year></span> Big Dream Education Pty Ltd.</p></div>
+  </footer>
+</body>
+</html>
