@@ -10,10 +10,12 @@
   --navy-deep: #0f2338;
   --gold: #c8a260;
   --gold-deep: #a9823e;
-  --shadow: 0 1px 4px rgba(15, 35, 56, 0.05);
-  --shadow-md: 0 2px 8px rgba(15, 35, 56, 0.07);
-  --radius: 14px;
-  --radius-sm: 8px;
+  --shadow: 0 4px 12px rgba(15, 35, 56, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 35, 56, 0.12);
+  --shadow-lg: 0 16px 40px rgba(15, 35, 56, 0.15);
+  --shadow-hover: 0 12px 32px rgba(15, 35, 56, 0.18);
+  --radius: 16px;
+  --radius-sm: 12px;
   --container: 1180px;
 }
 
@@ -90,10 +92,10 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid rgba(23, 49, 79, 0.07);
-  box-shadow: 0 1px 3px rgba(15, 35, 56, 0.04);
+  box-shadow: 0 4px 16px rgba(15, 35, 56, 0.08);
 }
 
 .nav-shell {
@@ -115,8 +117,14 @@ h3 {
   width: 64px;
   height: 64px;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(15, 35, 56, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand:hover img {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(15, 35, 56, 0.18);
 }
 
 .brand-text {
@@ -193,8 +201,8 @@ button.btn {
 }
 
 .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(169, 130, 62, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(169, 130, 62, 0.32);
 }
 
 .btn-secondary {
@@ -293,11 +301,22 @@ button.btn {
   background: #ffffff;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover,
+.service-card:hover,
+.profile-card:hover,
+.quote-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 .hero-card {
   padding: 2rem;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+  box-shadow: var(--shadow-md);
 }
 
 .hero-card-top {
@@ -373,11 +392,13 @@ button.btn {
 
 .section-soft,
 .page-hero {
-  background: #fafbfc;
+  background: linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%);
 }
 
 .section-dark {
-  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  background: 
+    radial-gradient(circle at top right, rgba(200, 162, 96, 0.15), transparent 40%),
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
 }
 
 .section-dark h2,
@@ -562,12 +583,20 @@ input,
 textarea {
   width: 100%;
   border: 1px solid rgba(23, 49, 79, 0.12);
-  border-radius: 10px;
+  border-radius: 12px;
   background: #fff;
   padding: 0.9rem 1rem;
   font: inherit;
   font-size: 0.95rem;
   color: var(--navy-deep);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200, 162, 96, 0.1);
 }
 
 textarea {
@@ -668,10 +697,10 @@ textarea {
     flex-direction: column;
     align-items: stretch;
     padding: 1rem;
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid var(--border);
     background: #ffffff;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
   }
 
   .site-nav.is-open {
@@ -711,6 +740,465 @@ textarea {
   }
 
   .brand-text strong {
+    font-size: 1.1rem;
+  }
+}
+/* Immigration Journey Slider */
+.immigration-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  margin: 2rem 0;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  height: 400px;
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.slide-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.slide h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.slide p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-dot.active {
+  background: var(--gold);
+}
+
+/* 3D Cards */
+.card-3d {
+  perspective: 1000px;
+  margin: 1rem 0;
+}
+
+.card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-3d:hover .card-inner {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+/* Immigration Journey Steps */
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.journey-step {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.journey-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-deep));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.journey-step:hover::before {
+  transform: scaleX(1);
+}
+
+.journey-step:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 12px rgba(200, 162, 96, 0.3);
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, var(--navy-deep), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+/* Floating Elements */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Success Stories Carousel */
+.success-carousel {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-md);
+  margin: 3rem 0;
+}
+
+.success-story {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.story-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(200, 162, 96, 0.3);
+}
+
+/* Parallax Background */
+.parallax-section {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(23, 49, 79, 0.8);
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* Interactive Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(200, 162, 96, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.stat-card:hover::before {
+  left: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .slide {
+    height: 300px;
+  }
+  
+  .slide h3 {
+    font-size: 1.5rem;
+  }
+  
+  .journey-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+/* Image Placeholders */
+.image-placeholder {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 2px dashed rgba(23, 49, 79, 0.2);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.image-placeholder:hover {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.image-placeholder.large {
+  min-height: 280px;
+  padding: 3rem;
+}
+
+.hero-image-placeholder {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px dashed rgba(23, 49, 79, 0.15);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.hero-image-placeholder:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--gold);
+}
+
+.placeholder-content {
+  max-width: 280px;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.placeholder-content h3,
+.placeholder-content h4 {
+  margin: 0 0 0.5rem;
+  color: var(--navy-deep);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.placeholder-content p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Gallery Item Placeholders */
+.gallery-item .image-placeholder {
+  margin: 0;
+  border-radius: var(--radius-sm);
+  min-height: 250px;
+}
+
+.gallery-item .image-placeholder.large {
+  min-height: 300px;
+}
+
+/* Content Grid for Hero Sections */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero-image-placeholder {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-placeholder {
+    padding: 1.5rem;
+    min-height: 180px;
+  }
+  
+  .image-placeholder.large {
+    min-height: 220px;
+    padding: 2rem;
+  }
+  
+  .hero-image-placeholder {
+    min-height: 200px;
+    padding: 1.5rem;
+  }
+  
+  .placeholder-icon {
+    font-size: 2.5rem;
+  }
+  
+  .placeholder-content h3,
+  .placeholder-content h4 {
     font-size: 1.1rem;
   }
 }

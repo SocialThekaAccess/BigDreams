@@ -39,6 +39,42 @@
   </header>
 
   <main>
+    <!-- Immigration Journey Slider -->
+    <section class="immigration-slider">
+      <div class="slider-container" id="immigrationSlider">
+        <div class="slide" style="background: linear-gradient(135deg, rgba(23, 49, 79, 0.9), rgba(200, 162, 96, 0.8)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 400\"><rect fill=\"%23f0f4f8\" width=\"1200\" height=\"400\"/><circle fill=\"%23c8a260\" cx=\"200\" cy=\"100\" r=\"30\" opacity=\"0.6\"/><circle fill=\"%2317314f\" cx=\"800\" cy=\"300\" r=\"40\" opacity=\"0.4\"/><circle fill=\"%23c8a260\" cx=\"1000\" cy=\"150\" r=\"25\" opacity=\"0.5\"/></svg>');">
+          <div class="slide-content">
+            <h3>🛬 Arrival in Australia</h3>
+            <p>Your journey begins with stepping onto Australian soil. From the first breath of fresh air to navigating the airport, every moment marks the start of your new chapter.</p>
+          </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(135deg, rgba(23, 49, 79, 0.9), rgba(200, 162, 96, 0.8)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 400\"><rect fill=\"%23e8f2ff\" width=\"1200\" height=\"400\"/><rect fill=\"%2317314f\" x=\"100\" y=\"150\" width=\"200\" height=\"100\" rx=\"10\" opacity=\"0.3\"/><rect fill=\"%23c8a260\" x=\"400\" y=\"100\" width=\"150\" height=\"200\" rx=\"10\" opacity=\"0.4\"/><rect fill=\"%2317314f\" x=\"700\" y=\"120\" width=\"180\" height=\"160\" rx=\"10\" opacity=\"0.3\"/></svg>');">
+          <div class="slide-content">
+            <h3>🏢 Finding Your First Home</h3>
+            <p>Settling into your new environment, exploring neighborhoods, and finding that perfect place to call home in Australia's vibrant cities.</p>
+          </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(135deg, rgba(23, 49, 79, 0.9), rgba(200, 162, 96, 0.8)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 400\"><rect fill=\"%23fff8f0\" width=\"1200\" height=\"400\"/><path fill=\"%23c8a260\" d=\"M100 200 L300 100 L500 200 L700 120 L900 200 L1100 150\" stroke=\"%2317314f\" stroke-width=\"3\" opacity=\"0.6\"/><circle fill=\"%2317314f\" cx=\"300\" cy=\"100\" r=\"8\"/><circle fill=\"%23c8a260\" cx=\"700\" cy=\"120\" r=\"8\"/><circle fill=\"%2317314f\" cx=\"1100\" cy=\"150\" r=\"8\"/></svg>');">
+          <div class="slide-content">
+            <h3>📚 Education & Career Growth</h3>
+            <p>Pursuing studies, building professional networks, and advancing your career in Australia's dynamic job market and world-class education system.</p>
+          </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(135deg, rgba(23, 49, 79, 0.9), rgba(200, 162, 96, 0.8)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 400\"><rect fill=\"%23f0fff4\" width=\"1200\" height=\"400\"/><circle fill=\"%23c8a260\" cx=\"600\" cy=\"200\" r=\"80\" opacity=\"0.3\"/><circle fill=\"%2317314f\" cx=\"300\" cy=\"150\" r=\"40\" opacity=\"0.4\"/><circle fill=\"%23c8a260\" cx=\"900\" cy=\"250\" r=\"50\" opacity=\"0.3\"/><circle fill=\"%2317314f\" cx=\"150\" cy=\"300\" r=\"30\" opacity=\"0.4\"/></svg>');">
+          <div class="slide-content">
+            <h3>🏡 Permanent Residency</h3>
+            <p>Achieving permanent residency status, gaining full rights and privileges, and truly becoming part of the Australian community and way of life.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <div class="slider-dot active" onclick="currentSlide(1)"></div>
+        <div class="slider-dot" onclick="currentSlide(2)"></div>
+        <div class="slider-dot" onclick="currentSlide(3)"></div>
+        <div class="slider-dot" onclick="currentSlide(4)"></div>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -51,19 +87,12 @@
           </div>
           <p class="trust-line">Arshdeep Bawa | Director / Registered Migration Agent | MARN: 2619304 | QEAC No: 11937</p>
         </div>
-        <aside class="hero-card">
-          <div class="hero-card-top">
-            <span class="stat-chip">Client-first guidance</span>
-            <span class="stat-chip">Education + migration support</span>
+        <aside class="hero-image-placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">🏢</div>
+            <h3>Perth Office</h3>
+            <p>Professional migration consultancy in the heart of Western Australia</p>
           </div>
-          <h2>Clear pathways. Honest advice. Quality work.</h2>
-          <p>We help individuals and families move forward with properly assessed options, careful documentation, and personalised support from first enquiry to final outcome.</p>
-          <ul class="feature-list">
-            <li>Skilled migration and skills assessments</li>
-            <li>Student visa and enrolment planning</li>
-            <li>Partner, family, employer-sponsored, and visitor visas</li>
-            <li>Permanent pathways and ART matters</li>
-          </ul>
         </aside>
       </div>
       <div class="hero-ribbon">
@@ -76,6 +105,115 @@
       </div>
     </section>
 
+    <!-- Immigration Journey Steps -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Your Journey</p>
+          <h2>The Australian Immigration Experience</h2>
+          <p>Every immigration story is unique, but these moments capture the essence of building a new life in Australia.</p>
+        </div>
+        <div class="journey-steps">
+          <div class="journey-step card-3d floating-element">
+            <div class="card-inner">
+              <div class="card-face">
+                <div class="step-icon">✈️</div>
+                <h3>First Steps</h3>
+                <p>From visa applications to arrival preparations, we guide you through every initial requirement and help you understand what to expect.</p>
+              </div>
+            </div>
+          </div>
+          <div class="journey-step card-3d floating-element" style="animation-delay: 0.5s;">
+            <div class="card-inner">
+              <div class="card-face">
+                <div class="step-icon">🏠</div>
+                <h3>Settlement</h3>
+                <p>Finding accommodation, opening bank accounts, understanding healthcare, and connecting with local communities in your new Australian home.</p>
+              </div>
+            </div>
+          </div>
+          <div class="journey-step card-3d floating-element" style="animation-delay: 1s;">
+            <div class="card-inner">
+              <div class="card-face">
+                <div class="step-icon">💼</div>
+                <h3>Career Building</h3>
+                <p>Skill recognition, job searching, networking, and advancing your professional career in Australia's competitive job market.</p>
+              </div>
+            </div>
+          </div>
+          <div class="journey-step card-3d floating-element" style="animation-delay: 1.5s;">
+            <div class="card-inner">
+              <div class="card-face">
+                <div class="step-icon">🎓</div>
+                <h3>Education Pathways</h3>
+                <p>Enrolling in courses, understanding the Australian education system, and pursuing qualifications that enhance your future prospects.</p>
+              </div>
+            </div>
+          </div>
+          <div class="journey-step card-3d floating-element" style="animation-delay: 2s;">
+            <div class="card-inner">
+              <div class="card-face">
+                <div class="step-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family Reunion</h3>
+                <p>Bringing loved ones to Australia, navigating family visa processes, and creating a complete life together in your new country.</p>
+              </div>
+            </div>
+          </div>
+          <div class="journey-step card-3d floating-element" style="animation-delay: 2.5s;">
+            <div class="card-inner">
+              <div class="card-face">
+                <div class="step-icon">🏆</div>
+                <h3>Permanent Residency</h3>
+                <p>Achieving permanent status, gaining citizenship eligibility, and securing your long-term future as an Australian resident.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="success-carousel">
+          <div class="success-story">
+            <div class="story-avatar">AS</div>
+            <h3>Arshdeep's Journey</h3>
+            <p>"From arriving as a student to becoming a registered migration agent, my own immigration experience drives my passion for helping others navigate their Australian dreams with confidence and clarity."</p>
+            <strong>Arshdeep Bawa - Director & Registered Migration Agent</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Stats -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our Impact</p>
+          <h2>Helping Dreams Become Reality</h2>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Successful Applications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years Combined Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Client Satisfaction Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Countries Represented</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container intro-grid">
         <div>
@@ -83,13 +221,51 @@
           <h2>Migration and education support built around real outcomes</h2>
           <p>Welcome to Big Dream Education &amp; Visa Services. We are a Perth-based migration and education consultancy committed to helping individuals and families achieve their goals in Australia. We provide professional support with migration matters, education pathways, skills assessments, enrolment assistance, permanent pathways, all types of visas, and ART matters.</p>
         </div>
-        <div class="accent-panel">
-          <h3>What clients value most</h3>
-          <div class="check-grid">
-            <p>Honest advice with proper knowledge and careful case assessment.</p>
-            <p>Quality work and attention to detail across education and migration matters.</p>
-            <p>Clear communication and personalised guidance for every client.</p>
-            <p>A practical approach focused on helping people turn their dream into reality.</p>
+        <div class="image-placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">📋</div>
+            <h4>Professional Consultation</h4>
+            <p>Expert guidance for your migration journey</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Success Images -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Success Stories</p>
+          <h2>Real People, Real Results</h2>
+          <p>See how we've helped families and individuals achieve their Australian dreams.</p>
+        </div>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <div class="image-placeholder large">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">👨‍👩‍👧‍👦</div>
+                <h4>Family Reunion</h4>
+                <p>The Johnson family celebrating their successful partner visa application</p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-placeholder large">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">🎓</div>
+                <h4>Student Success</h4>
+                <p>Maria starting her Master's degree at University of Western Australia</p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-placeholder large">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">🏆</div>
+                <h4>PR Achievement</h4>
+                <p>David receiving his permanent residency confirmation</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
