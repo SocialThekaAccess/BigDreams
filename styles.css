@@ -614,10 +614,21 @@ textarea {
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
   padding: 3rem 0 2rem;
+}
+
+.footer-grid > div {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-grid > div:first-child {
+  flex: 1.5;
+  min-width: 250px;
 }
 
 .footer-bottom {
@@ -642,8 +653,7 @@ textarea {
 
   .service-grid,
   .testimonial-grid,
-  .blog-grid,
-  .footer-grid {
+  .blog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -687,7 +697,6 @@ textarea {
   .blog-grid,
   .timeline,
   .mini-grid,
-  .footer-grid,
   .form-grid {
     grid-template-columns: 1fr;
   }

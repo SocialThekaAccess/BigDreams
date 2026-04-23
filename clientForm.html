@@ -7,9 +7,239 @@
   <meta name="description" content="Client information form for Big Dream Education & Visa Services.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
+  <style>
+    .paper-form {
+      background: #fff;
+      max-width: 850px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+    .paper-header-wrapper {
+      position: relative;
+    }
+    .paper-logo-area {
+      text-align: right;
+      padding: 1.5rem 2.5rem 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .paper-logo-area img {
+      max-height: 48px;
+    }
+    .paper-title-bar {
+      background-color: #1a365d; /* Dark navy blue from image */
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .paper-title-bar h2 {
+      color: #fff;
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .paper-content {
+      padding: 1.5rem 2.5rem 3rem;
+    }
+    
+    .form-section {
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 1.2rem;
+    }
+    .form-section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    
+    .paper-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .row-label {
+      width: 140px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      color: #000;
+      line-height: 1.3;
+    }
+    .row-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      width: 100%;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .input-group label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      color: #000;
+      margin: 0;
+    }
+    
+    .input-line {
+      border: none;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      padding: 0.15rem 0.25rem;
+      background: transparent;
+      flex: 1;
+      font-size: 0.95rem;
+      color: #000;
+      width: 100%;
+    }
+    .input-line:focus {
+      outline: none;
+      border-bottom: 2px solid var(--gold);
+      background-color: #f8fafc;
+    }
+    
+    .radio-group {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .radio-group label {
+      font-weight: normal;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+      color: #000;
+    }
+    .radio-group input[type="radio"] {
+      margin: 0;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .success-message, .error-message {
+      margin: 1.5rem 2.5rem 0;
+    }
+    .success-message {
+      display: none;
+      background-color: #dcfce7;
+      color: #166534;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #bbf7d0;
+    }
+    .error-message {
+      display: none;
+      background-color: #fee2e2;
+      color: #991b1b;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecaca;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 640px) {
+      .paper-row {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .row-label {
+        width: 100%;
+        margin-bottom: 0.25rem;
+      }
+      .form-row.stack-mobile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .input-group {
+        width: 100%;
+      }
+      .paper-content {
+        padding: 1.5rem;
+      }
+      .paper-logo-area {
+        padding: 1rem 1.5rem 0;
+      }
+    }
+
+    /* Declaration specific styles to match image */
+    .declaration-content {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #000;
+      width: 100%;
+    }
+    .declaration-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .declaration-item input[type="checkbox"] {
+      margin-top: 5px;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    .declaration-item.bold {
+      font-weight: 700;
+    }
+    .signature-row {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .sig-input-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .sig-input-group label {
+      font-weight: 700;
+      white-space: nowrap;
+      margin-bottom: 2px;
+      font-size: 1rem;
+    }
+    .sig-input-group.flex-grow {
+      flex: 1;
+      min-width: 250px;
+    }
+    .sig-input-group .input-line {
+      border: none;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      padding: 0 5px;
+      background: transparent;
+      font-size: 1rem;
+      height: 1.5rem;
+    }
+  </style>
 </head>
 <body data-page="client-form">
   <header class="site-header">
@@ -17,81 +247,354 @@
       <a class="brand" href="index.html"><img src="assets/bdLogo.png" alt="Big Dream logo"><span class="brand-text"><strong>Big Dream</strong><span>Education &amp; Visa Services</span></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blogListing.html">Blog</a><a href="clientForm.html">Client Form</a><a href="contactUs.html">Contact</a>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blogListing.html">Blog</a><a href="clientForm.html" aria-current="page">Client Form</a><a href="contactUs.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container narrow">
-        <p class="eyebrow">Client Form</p>
-        <h1>Client Information Form</h1>
-        <p>This online form follows the fields outlined in the content pack and is designed to stay simple, mobile-friendly, and easy to complete.</p>
-      </div>
-    </section>
+    <section class="section section-soft" style="padding-top: 3rem;">
+      <div class="container">
+        
+        <div class="paper-form">
+          <div class="paper-header-wrapper">
+            <div class="paper-logo-area">
+              <img src="assets/bdLogo.png" alt="Big Dream Logo">
+              <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px; text-align: left;">
+                <span style="font-size: 1.2rem; font-weight: 800; color: #a9823e; line-height: 1;">BIG DREAM</span>
+                <span style="font-size: 0.65rem; font-weight: 600; color: #1e293b; letter-spacing: 0.5px;">Education & Visa Services</span>
+              </div>
+            </div>
+            <div class="paper-title-bar">
+              <h2>New Client Information Form</h2>
+            </div>
+          </div>
 
-    <section class="section">
-      <div class="container contact-grid">
-        <form class="form-card form-card-large" action="https://formsubmit.co/admin@bigdreamvisa.com.au" method="POST">
-          <input type="hidden" name="_subject" value="Big Dream client information form">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <h2>Client details</h2>
-          <div class="form-grid">
-            <label>Title<input type="text" name="Title"></label>
-            <label>Surname<input type="text" name="Surname" required></label>
-            <label>First name(s)<input type="text" name="First name(s)" required></label>
-            <label>Date of birth<input type="date" name="Date of birth"></label>
-            <label>Nationality<input type="text" name="Nationality"></label>
-            <label>Passport number<input type="text" name="Passport number"></label>
-            <label class="full-span">Residential address<textarea name="Residential address" rows="3"></textarea></label>
-            <label class="full-span">Postal address<textarea name="Postal address" rows="3"></textarea></label>
-            <label>Qualification<input type="text" name="Qualification"></label>
-            <label>College or university<input type="text" name="College or university"></label>
-            <label>Occupation<input type="text" name="Occupation"></label>
-            <label>Mobile<input type="tel" name="Mobile"></label>
-            <label>Home phone<input type="tel" name="Home phone"></label>
-            <label>Work phone<input type="tel" name="Work phone"></label>
-            <label>Email<input type="email" name="Email" required></label>
-            <label class="full-span">Family member details<textarea name="Family member details" rows="4" placeholder="Full name, date of birth, and relationship"></textarea></label>
-            <label>Current visa subclass<input type="text" name="Current visa subclass"></label>
-            <label>Visa expiry date<input type="date" name="Visa expiry date"></label>
-            <label class="full-span">Visa conditions<textarea name="Visa conditions" rows="3"></textarea></label>
-            <label class="full-span">Immigration history<textarea name="Immigration history" rows="4" placeholder="Any refusals, cancellations, or issues with the Department"></textarea></label>
-            <label class="full-span">Sponsor details<textarea name="Sponsor details" rows="4" placeholder="Name, business, address, phone, and email if sponsored"></textarea></label>
-            <label class="full-span">Migration issue or query<textarea name="Migration issue or query" rows="5"></textarea></label>
+          <div id="form-success" class="success-message">
+            <strong>Success!</strong> Your client information form has been submitted successfully. We will get back to you soon.
           </div>
-          <div class="checkbox-stack">
-            <label><input type="checkbox" name="Initial consultation acknowledgement" required> I understand this consultation does not create a client relationship until a formal engagement contract is signed.</label>
-            <label><input type="checkbox" name="VEVO permission"> I give permission for a VEVO search if required.</label>
-            <label><input type="checkbox" name="Consumer guide acknowledgement"> I acknowledge that the Consumer Guide has been provided where applicable.</label>
+          <div id="form-error" class="error-message">
+            <strong>Error!</strong> There was a problem submitting your form. Please try again.
           </div>
-          <button class="btn" type="submit">Submit Client Information</button>
-        </form>
 
-        <aside class="info-stack">
-          <div class="info-card">
-            <h3>Payment details shown on form</h3>
-            <p>Account Name: Big Dream Education Pty Ltd</p>
-            <p>BSB: 062692</p>
-            <p>Account: 78357321</p>
-            <p>SWIFT Code: CTBAAU2S</p>
-            <p>Pay ID: 11 669 816 479</p>
+          <div class="paper-content">
+            <form id="client-form" action="https://formsubmit.co/ajax/admin@bigdreamvisa.com.au" method="POST">
+              <input type="hidden" name="_subject" value="New Client Information Form Submission">
+              <input type="hidden" name="_captcha" value="false">
+              
+              <!-- Name Section -->
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Name</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Title:</label>
+                        <div class="radio-group">
+                          <label><input type="radio" name="Title" value="Mr" required> Mr</label>
+                          <label><input type="radio" name="Title" value="Mrs"> Mrs</label>
+                          <label><input type="radio" name="Title" value="Ms"> Ms</label>
+                          <label><input type="radio" name="Title" value="Miss"> Miss</label>
+                          <label><input type="radio" name="Title" value="Other"> Other</label>
+                        </div>
+                        <span style="font-style: italic; font-size: 0.85rem; margin-left: 0.25rem; color: #000;">(please specify):</span>
+                        <input type="text" class="input-line" name="Title Other" style="max-width: 100px;">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="input-group">
+                        <label>Surname</label>
+                        <input type="text" class="input-line" name="Surname" required>
+                      </div>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 2;">
+                        <label>First Name(s):</label>
+                        <input type="text" class="input-line" name="First Name(s)" required>
+                      </div>
+                      <div class="input-group" style="flex: 1;">
+                        <label>Date of Birth:</label>
+                        <input type="date" class="input-line" name="Date of Birth" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Family Members -->
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Family<br>member(s)<br><span style="font-weight:normal;font-size:0.85rem;">(If any)</span></div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 2;"><label>Full Name:</label><input type="text" class="input-line" name="Family Member 1 Name"></div>
+                      <div class="input-group" style="flex: 1;"><label>DOB:</label><input type="date" class="input-line" name="Family Member 1 DOB"></div>
+                      <div class="input-group" style="flex: 1.5;"><label>Relationship:</label><input type="text" class="input-line" name="Family Member 1 Relationship"></div>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 2;"><label>Full Name:</label><input type="text" class="input-line" name="Family Member 2 Name"></div>
+                      <div class="input-group" style="flex: 1;"><label>DOB:</label><input type="date" class="input-line" name="Family Member 2 DOB"></div>
+                      <div class="input-group" style="flex: 1.5;"><label>Relationship:</label><input type="text" class="input-line" name="Family Member 2 Relationship"></div>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 2;"><label>Full Name:</label><input type="text" class="input-line" name="Family Member 3 Name"></div>
+                      <div class="input-group" style="flex: 1;"><label>DOB:</label><input type="date" class="input-line" name="Family Member 3 DOB"></div>
+                      <div class="input-group" style="flex: 1.5;"><label>Relationship:</label><input type="text" class="input-line" name="Family Member 3 Relationship"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Nationality -->
+              <div class="form-section">
+                <div class="paper-row" style="align-items: center;">
+                  <div class="row-label">Nationality</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group"><label style="width: 70px;">Country:</label><input type="text" class="input-line" name="Country" required></div>
+                      <div class="input-group"><label style="width: 95px;">Passport No:</label><input type="text" class="input-line" name="Passport No"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Address</div>
+                  <div class="row-content">
+                    <div class="input-group"><label style="text-decoration: underline; width: 180px;">Residential:</label><input type="text" class="input-line" name="Residential Address" required></div>
+                    <div class="input-group"><label style="width: 180px;"></label><input type="text" class="input-line" name="Residential Address Line 2"></div>
+                    <div class="input-group"><label style="text-decoration: underline; width: 180px;">Postal <i style="font-weight:normal;">(if different)</i>:</label><input type="text" class="input-line" name="Postal Address"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- University / College -->
+              <div class="form-section">
+                <div class="paper-row" style="align-items: center;">
+                  <div class="row-label">University /<br>College</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 2;"><label style="width: 55px;">Name:</label><input type="text" class="input-line" name="University / College Name"></div>
+                      <div class="input-group" style="flex: 1;"><label style="width: 100px;">Qualification:</label><input type="text" class="input-line" name="Qualification"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-section">
+                <div class="paper-row" style="align-items: center;">
+                  <div class="row-label">Phone</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group"><label style="width: 55px;">Mobile:</label><input type="tel" class="input-line" name="Mobile" required></div>
+                      <div class="input-group"><label style="width: 50px;">Home:</label><input type="tel" class="input-line" name="Home Phone"></div>
+                      <div class="input-group"><label style="width: 45px;">Work:</label><input type="tel" class="input-line" name="Work Phone"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email & Occupation -->
+              <div class="form-section">
+                <div class="paper-row" style="align-items: center;">
+                  <div class="row-label">Email</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 2;"><label style="width: 55px;">Email:</label><input type="email" class="input-line" name="Email" required></div>
+                      <div class="input-group" style="flex: 1;"><label style="font-weight:700; width: 95px;">Occupation:</label><input type="text" class="input-line" name="Occupation"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Current Visa -->
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Current visa</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group" style="flex: 1;"><label style="width: 70px;">Subclass:</label><input type="text" class="input-line" name="Current Visa Subclass"></div>
+                      <div class="input-group" style="flex: 1;"><label style="width: 85px;">Expires on:</label><input type="date" class="input-line" name="Visa Expiry Date"></div>
+                      <div class="input-group" style="flex: 1.5;"><label style="width: 85px;">Conditions:</label><input type="text" class="input-line" name="Visa Conditions"></div>
+                    </div>
+                    <div class="form-row stack-mobile" style="justify-content: center; margin-top: 0.5rem;">
+                      <span style="font-style: italic; font-size: 0.85rem; color: #000; text-align: center; width: 100%;">
+                        Have you ever been refused a visa, had your visa cancelled, or had any other issues with the Department of Immigration and Border Protection (DIBP)? 
+                        <label style="margin-left: 0.5rem; font-style: normal; font-weight: bold; display: inline-flex; align-items: center; gap: 2px;"><input type="radio" name="Visa Issues" value="Yes" style="margin:0;"> Y</label>
+                        <label style="margin-left: 0.5rem; font-style: normal; font-weight: bold; display: inline-flex; align-items: center; gap: 2px;"><input type="radio" name="Visa Issues" value="No" style="margin:0;"> N</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sponsor Details -->
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Sponsor's<br>details (if<br>sponsored)</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group"><label style="width: 100px;">First Name(s):</label><input type="text" class="input-line" name="Sponsor First Name"></div>
+                      <div class="input-group"><label style="width: 75px;">Surname:</label><input type="text" class="input-line" name="Sponsor Surname"></div>
+                    </div>
+                    <div class="input-group"><label style="text-decoration: underline; width: 185px;">Business Name/Address:</label><input type="text" class="input-line" name="Sponsor Business Details"></div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group"><label style="width: 55px;">Mobile:</label><input type="tel" class="input-line" name="Sponsor Mobile"></div>
+                      <div class="input-group"><label style="width: 50px;">Home:</label><input type="tel" class="input-line" name="Sponsor Home Phone"></div>
+                      <div class="input-group"><label style="width: 45px;">Work:</label><input type="tel" class="input-line" name="Sponsor Work Phone"></div>
+                    </div>
+                    <div class="input-group"><label style="text-decoration: underline; width: 55px;">Email:</label><input type="email" class="input-line" name="Sponsor Email"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Migration Issues -->
+              <div class="form-section">
+                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: #000;">Any relevant migration issues/queries:</div>
+                <textarea class="input-line" style="border: none; border-bottom: 1px solid #000; border-radius: 0; padding: 0.5rem 0; width: 100%; resize: vertical;" rows="3" name="Migration Issues/Queries"></textarea>
+                <div style="border-bottom: 1px solid #000; height: 1.5rem; width: 100%; margin-top: 0.5rem;"></div>
+              </div>
+
+              <!-- Declarations -->
+              <div class="form-section" style="border-bottom: none;">
+                <div class="declaration-content">
+                  <label class="declaration-item">
+                    <input type="checkbox" name="Declaration 1" required>
+                    <span>I understand that the objective of the initial consultation is for Big Dream Education & Visa Services to understand my situation better and collect necessary information for Big Dream Education & Visa Services to determine on how and whether it is able to assist me in my migration matters.</span>
+                  </label>
+                  <label class="declaration-item">
+                    <input type="checkbox" name="Declaration 2" required>
+                    <span>I also understand that I am not a client of Big Dream Education & Visa Services until such time that Big Dream Education & Visa Services and myself sign a formal engagement contract.</span>
+                  </label>
+                  <label class="declaration-item">
+                    <input type="checkbox" name="Declaration 3" required>
+                    <span>I agree to Big Dream Education & Visa Services conducting a search for my current visa entitlements using Visa Entitlement Verification Online (VEVO), in order to assist with assessment of my eligibility for Australian visas. I acknowledge that the DIBP monitors VEVO searches, and that Big Dream Education & Visa Services is not responsible for any actions DIBP may take in this regard.</span>
+                  </label>
+                  <label class="declaration-item bold">
+                    <input type="checkbox" name="Declaration 4" required>
+                    <span>I confirm that I was handed a copy of the Office of the Migration Agents Registration Authority’s Consumer Guide.</span>
+                  </label>
+                  
+                  <div class="signature-row">
+                    <div class="sig-input-group">
+                      <label>Date:</label>
+                      <input type="date" class="input-line" name="Declaration Date" required style="width: 150px;">
+                    </div>
+                    <div class="sig-input-group flex-grow">
+                      <label>Client Signature:</label>
+                      <input type="text" class="input-line" name="Client Signature" required placeholder="Type Full Name as Signature">
+                    </div>
+                  </div>
+                  
+                  <div class="sig-input-group" style="margin-top: 1.5rem; max-width: 400px;">
+                    <label>Agent:</label>
+                    <input type="text" class="input-line" name="Agent" style="flex: 1;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment and Links (At Bottom) -->
+              <hr style="border: none; border-top: 2px solid var(--gold); margin: 2rem 0;">
+              
+              <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; font-size: 0.85rem; color: #000;">
+                <div style="flex: 1; min-width: 250px;">
+                  <div style="display: flex; margin-bottom: 0.5rem;"><span style="font-weight:700; width: 110px;">Account Name:</span> Big Dream Education Pty Ltd</div>
+                  <div style="display: flex; margin-bottom: 0.5rem; align-items: center;">
+                    <span style="font-weight:700; width: 40px;">BSB:</span> <span style="width: 70px;">062692</span> 
+                    <span style="font-weight:700; margin-left: 10px; width: 40px;">ACC:</span> <span>78357321</span>
+                  </div>
+                  <div style="display: flex; margin-bottom: 0.5rem;"><span style="font-weight:700; width: 110px;">SWIFT Code:</span> CTBAAU2S</div>
+                  <div style="display: flex; margin-bottom: 0.5rem;"><span style="font-weight:700; width: 110px;">Pay ID:</span> 11 669 816 479</div>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                  <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: 700;">Useful Links</h4>
+                  <a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" style="display:block; color:var(--navy); text-decoration:underline; margin-bottom:0.4rem;">Registered Migration Agent</a>
+                  <a href="https://www.legislation.gov.au/F2021L01856/latest/text" target="_blank" style="display:block; color:var(--navy); text-decoration:underline; margin-bottom:0.4rem;">Migration Code of Conduct</a>
+                  <a href="https://www.omara.gov.au/consumer-information" target="_blank" style="display:block; color:var(--navy); text-decoration:underline; margin-bottom:0.4rem;">Migration Agent Consumer Guide</a>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div style="text-align: center; margin-top: 3rem;">
+                <button id="submit-btn" class="btn" type="submit" style="padding: 1rem 3rem; font-size: 1.1rem; border-radius: 8px;">Submit Client Information</button>
+              </div>
+
+            </form>
           </div>
-          <div class="info-card">
-            <h3>Useful links</h3>
-            <p><a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noreferrer">Registered Migration Agent</a></p>
-            <p><a href="https://www.legislation.gov.au/F2021L00357/latest/text" target="_blank" rel="noreferrer">Migration Agent Code of Conduct</a></p>
-            <p><a href="https://www.omara.gov.au/consumer-information" target="_blank" rel="noreferrer">Migration Agent Consumer Guide</a></p>
-          </div>
-        </aside>
+        </div>
+        
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-bottom"><p>&copy; <span data-year></span> Big Dream Education Pty Ltd.</p></div>
+  <footer class="site-footer" style="margin-top: 0;">
+    <div class="container footer-bottom" style="border-top: none; text-align: center; flex-direction: column; gap: 1rem;">
+      <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; font-size: 0.9rem;">
+        <a href="https://www.legislation.gov.au/F2021L01856/latest/text" target="_blank" rel="noreferrer">Migration Code of Conduct</a>
+        <a href="https://www.maisonchenlaw.com.au/legal/consultation-terms-conditions" target="_blank" rel="noreferrer">Consultation Terms and Conditions</a>
+        <a href="https://www.maisonchenlaw.com.au/legal/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a>
+        <a href="https://www.maisonchenlaw.com.au/legal/website-terms-of-use" target="_blank" rel="noreferrer">Website terms of use</a>
+      </div>
+      <p>&copy; <span data-year></span> Big Dream Education Pty Ltd.</p>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Set current year in footer
+      const yearSpans = document.querySelectorAll('[data-year]');
+      yearSpans.forEach(span => span.textContent = new Date().getFullYear());
+
+      const form = document.getElementById("client-form");
+      const successMessage = document.getElementById("form-success");
+      const errorMessage = document.getElementById("form-error");
+      const submitBtn = document.getElementById("submit-btn");
+
+      if (form) {
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submitting...";
+          successMessage.style.display = "none";
+          errorMessage.style.display = "none";
+
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            if(data.success || data.success === "true" || data.ok) {
+              successMessage.style.display = "block";
+              form.reset();
+              successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              successMessage.style.display = "block"; 
+              successMessage.innerHTML = "<strong>Success!</strong> If this is your first submission, please check your email to activate the form. Otherwise, your submission was received.";
+              form.reset();
+              successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          })
+          .catch(error => {
+            errorMessage.style.display = "block";
+            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit Client Information";
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
