@@ -1,0 +1,31 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F5F2EC"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="170" y="165" width="1260" height="570" rx="34" fill="#F7F4EE" fill-opacity="0.92"/>
+  <rect x="235" y="228" width="510" height="330" rx="26" fill="#DDE8F1"/>
+  <path d="M235 478C306 435 387 420 477 431C571 442 655 487 745 558V558H235V478Z" fill="#2B5B7C"/>
+  <circle cx="621" cy="311" r="63" fill="#F1C979"/>
+  <rect x="835" y="242" width="450" height="18" rx="9" fill="#17314F" fill-opacity="0.14"/>
+  <rect x="835" y="292" width="388" height="16" rx="8" fill="#17314F" fill-opacity="0.1"/>
+  <rect x="835" y="334" width="430" height="16" rx="8" fill="#17314F" fill-opacity="0.1"/>
+  <rect x="835" y="404" width="350" height="130" rx="24" fill="#17314F"/>
+  <rect x="875" y="440" width="154" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.88"/>
+  <rect x="875" y="473" width="106" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.6"/>
+  <circle cx="1125" cy="471" r="42" fill="#C8A260"/>
+  <path d="M431 663C431 617 468 580 514 580C560 580 597 617 597 663V735H431V663Z" fill="#17314F"/>
+  <circle cx="514" cy="542" r="54" fill="#D8A06F"/>
+  <path d="M558 514C542 490 519 477 489 481C500 458 526 444 553 452C576 458 595 477 602 503C589 503 575 506 558 514Z" fill="#0F2338"/>
+  <path d="M948 672C948 626 985 589 1031 589C1077 589 1114 626 1114 672V735H948V672Z" fill="#C8A260"/>
+  <circle cx="1031" cy="551" r="54" fill="#E4B086"/>
+  <path d="M991 528C997 499 1017 476 1050 473C1084 470 1115 491 1127 522C1098 515 1072 516 1047 527C1028 535 1010 542 991 528Z" fill="#17314F"/>
+  <rect x="1118" y="631" width="128" height="22" rx="11" fill="#2B5B7C"/>
+  <rect x="1138" y="666" width="93" height="18" rx="9" fill="#C8A260"/>
+  <text x="840" y="642" fill="#17314F" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Consultation in Perth</text>
+  <text x="840" y="679" fill="#50657B" font-family="Inter, Arial, sans-serif" font-size="22">Clear advice. Better preparation. Real next steps.</text>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="84" x2="1455" y2="851" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17314F"/>
+      <stop offset="1" stop-color="#C8A260"/>
+    </linearGradient>
+  </defs>
+</svg>

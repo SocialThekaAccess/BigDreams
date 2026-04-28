@@ -1,0 +1,22 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F5F1EA"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="198" y="140" width="1204" height="620" rx="36" fill="#F8F6F2" fill-opacity="0.95"/>
+  <rect x="260" y="214" width="540" height="460" rx="28" fill="#E2EBF2"/>
+  <path d="M311 555C388 508 468 490 560 503C639 514 719 554 800 623V674H260V605C276 588 293 571 311 555Z" fill="#2C5A79"/>
+  <rect x="900" y="226" width="436" height="300" rx="28" fill="#17314F"/>
+  <circle cx="1120" cy="340" r="84" fill="#F3D184"/>
+  <path d="M982 583H1266" stroke="#17314F" stroke-opacity="0.14" stroke-width="18" stroke-linecap="round"/>
+  <path d="M982 633H1198" stroke="#17314F" stroke-opacity="0.1" stroke-width="16" stroke-linecap="round"/>
+  <path d="M1082 238C1152 238 1208 293 1208 363C1208 464 1082 586 1082 586C1082 586 956 464 956 363C956 293 1012 238 1082 238Z" fill="#C8A260"/>
+  <circle cx="1082" cy="362" r="42" fill="#F8F6F2"/>
+  <rect x="914" y="676" width="334" height="26" rx="13" fill="#C8A260"/>
+  <text x="918" y="776" fill="#17314F" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Bennett Springs, Perth</text>
+  <text x="918" y="816" fill="#5B6E80" font-family="Inter, Arial, sans-serif" font-size="22">Welcoming location for migration and education consultations</text>
+  <defs>
+    <linearGradient id="bg" x1="166" y1="79" x2="1458" y2="823" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17314F"/>
+      <stop offset="1" stop-color="#C8A260"/>
+    </linearGradient>
+  </defs>
+</svg>

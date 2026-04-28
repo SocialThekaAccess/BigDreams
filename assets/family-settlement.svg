@@ -1,0 +1,27 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#16324B"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1230" cy="180" r="95" fill="#F4D287"/>
+  <path d="M0 677C131 640 218 631 334 643C470 657 579 739 720 747C884 755 992 665 1128 628C1263 591 1397 610 1600 698V900H0V677Z" fill="#214968"/>
+  <path d="M0 766C124 719 239 707 359 719C493 732 624 804 772 807C919 810 1045 747 1159 718C1307 679 1434 703 1600 783V900H0V766Z" fill="#0F2338"/>
+  <path d="M392 590L545 438L677 531L830 383L985 505L1158 342L1322 455" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M408 745C408 671 468 611 542 611C616 611 676 671 676 745V812H408V745Z" fill="#17314F"/>
+  <circle cx="542" cy="562" r="79" fill="#E6B18B"/>
+  <path d="M488 534C500 489 535 460 584 467C629 474 664 506 672 548C620 533 566 529 488 534Z" fill="#102538"/>
+  <path d="M734 770C734 715 779 670 834 670C889 670 934 715 934 770V812H734V770Z" fill="#C8A260"/>
+  <circle cx="834" cy="633" r="59" fill="#E3AE82"/>
+  <path d="M789 611C800 584 826 568 857 571C887 573 914 590 925 617C899 610 875 609 849 614C829 618 809 621 789 611Z" fill="#17314F"/>
+  <path d="M964 736C964 682 1008 638 1062 638C1116 638 1160 682 1160 736V812H964V736Z" fill="#2C5A7A"/>
+  <circle cx="1062" cy="601" r="58" fill="#DDA377"/>
+  <path d="M1019 580C1028 550 1051 529 1082 527C1112 524 1141 541 1156 570C1125 567 1098 568 1070 576C1052 581 1035 585 1019 580Z" fill="#0F2338"/>
+  <rect x="210" y="148" width="360" height="108" rx="26" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.18"/>
+  <text x="248" y="197" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Settlement Support</text>
+  <text x="248" y="235" fill="#D9E4EC" font-family="Inter, Arial, sans-serif" font-size="24">Building confidence for families in Australia</text>
+  <defs>
+    <linearGradient id="bg" x1="183" y1="80" x2="1341" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17314F"/>
+      <stop offset="0.55" stop-color="#376889"/>
+      <stop offset="1" stop-color="#C8A260"/>
+    </linearGradient>
+  </defs>
+</svg>
