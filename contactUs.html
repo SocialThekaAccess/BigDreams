@@ -15,49 +15,91 @@
       padding-top: 0;
     }
     .contact-form-shell {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
     }
     .paper-form {
       background: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2e8f0;
+      border: 1px solid #ececec;
+      border-radius: 24px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
       position: relative;
+      overflow: hidden;
     }
     .paper-header-wrapper {
       position: relative;
+      padding: 1.75rem 2rem 0;
     }
     .paper-logo-area {
-      text-align: right;
-      padding: 1.5rem 2.5rem 0;
+      text-align: left;
+      padding: 0;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: center;
     }
     .paper-logo-area img {
-      max-height: 48px;
+      max-height: 58px;
     }
     .paper-title-bar {
-      background-color: #1a365d;
-      color: #fff;
-      padding: 0.5rem 1.5rem;
-      text-align: center;
-      margin-top: 1rem;
+      display: none;
     }
-    .paper-title-bar h2 {
-      color: #fff;
-      margin: 0;
-      font-size: 1.6rem;
+    .booking-eyebrow {
+      margin: 1.4rem 0 0.65rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #475569;
+    }
+    .appointment-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.35rem 1.4rem;
+      border: 1px solid #ececec;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+    }
+    .appointment-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111827;
+    }
+    .appointment-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+    .appointment-close {
+      align-self: flex-start;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #111827;
+      opacity: 0.75;
+    }
+    .form-panel-heading {
+      margin: 2rem 0 1rem;
+    }
+    .form-panel-heading h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.85rem;
+      color: #111827;
+    }
+    .form-panel-heading p {
+      margin: 0;
+      color: #6b7280;
+      font-size: 0.98rem;
     }
     .paper-content {
-      padding: 1.5rem 2.5rem 3rem;
+      padding: 1.25rem 2rem 3rem;
     }
     .paper-content .form-section {
-      margin-bottom: 1.2rem;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 1.2rem;
+      margin-bottom: 1.35rem;
+      border-bottom: 0;
+      padding-bottom: 0;
     }
     .paper-content .form-section:last-of-type {
       border-bottom: none;
@@ -66,72 +108,80 @@
     }
     .paper-row {
       display: flex;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0.8rem;
     }
     .row-label {
-      width: 140px;
+      width: auto;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       flex-shrink: 0;
-      color: #000;
+      color: #111827;
       line-height: 1.3;
     }
     .row-content {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
       min-width: 0;
     }
     .paper-content .form-row {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 1.1rem;
+      align-items: start;
       width: 100%;
     }
     .paper-content .input-group {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.45rem;
       flex: 1;
     }
     .paper-content .input-group label {
       font-weight: 600;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      color: #000;
+      font-size: 0.88rem;
+      white-space: normal;
+      color: #111827;
       margin: 0;
     }
     .input-line {
-      border: none;
-      border-bottom: 1px solid #000;
-      border-radius: 0;
-      padding: 0.15rem 0.25rem;
-      background: transparent;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 0.85rem 0.95rem;
+      background: #fafafa;
       flex: 1;
       font-size: 0.95rem;
-      color: #000;
+      color: #111827;
       width: 100%;
     }
     .input-line:focus {
       outline: none;
-      border-bottom: 2px solid var(--gold);
-      background-color: #f8fafc;
+      border-color: var(--gold);
+      background-color: #fff;
+      box-shadow: 0 0 0 3px rgba(200, 162, 96, 0.14);
     }
     .radio-group {
       display: flex;
       gap: 0.5rem;
       align-items: center;
       flex-wrap: wrap;
+      padding: 0.15rem 0 0.1rem;
     }
     .radio-group label {
       font-weight: 400;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       display: flex;
       align-items: center;
       gap: 0.25rem;
       cursor: pointer;
-      color: #000;
+      color: #111827;
+      padding: 0.45rem 0.7rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      background: #fff;
     }
     .radio-group input[type="radio"] {
       margin: 0;
@@ -141,9 +191,9 @@
     .success-message,
     .error-message {
       display: none;
-      margin: 1.5rem 2.5rem 0;
+      margin: 1rem 2rem 0;
       padding: 1rem;
-      border-radius: 0.5rem;
+      border-radius: 12px;
     }
     .success-message {
       background-color: #dcfce7;
@@ -158,7 +208,7 @@
     .declaration-content {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #000;
+      color: #111827;
       width: 100%;
     }
     .declaration-item {
@@ -167,6 +217,10 @@
       gap: 12px;
       margin-bottom: 1rem;
       text-align: left;
+      padding: 1rem;
+      border: 1px solid #ececec;
+      border-radius: 16px;
+      background: #fff;
     }
     .declaration-item input[type="checkbox"] {
       margin-top: 5px;
@@ -201,13 +255,35 @@
       min-width: 250px;
     }
     .sig-input-group .input-line {
-      border: none;
-      border-bottom: 1px solid #000;
-      border-radius: 0;
-      padding: 0 5px;
-      background: transparent;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 0.75rem 0.9rem;
+      background: #fafafa;
       font-size: 1rem;
-      height: 1.5rem;
+      height: auto;
+    }
+    .form-footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .form-footer-card {
+      padding: 1.2rem 1.25rem;
+      border: 1px solid #ececec;
+      border-radius: 18px;
+      background: #fff;
+      font-size: 0.92rem;
+      color: #111827;
+    }
+    .form-footer-card h4 {
+      margin: 0 0 0.7rem;
+      font-size: 1rem;
+      color: #111827;
+    }
+    .form-footer-card a {
+      color: var(--navy);
+      text-decoration: underline;
     }
     @media (max-width: 640px) {
       .paper-row {
@@ -219,17 +295,28 @@
         margin-bottom: 0.25rem;
       }
       .paper-content .form-row.stack-mobile {
-        flex-direction: column;
-        align-items: flex-start;
+        grid-template-columns: 1fr;
       }
       .paper-content .input-group {
         width: 100%;
       }
       .paper-content {
-        padding: 1.5rem;
+        padding: 1.25rem;
+      }
+      .paper-header-wrapper {
+        padding: 1.25rem 1.25rem 0;
       }
       .paper-logo-area {
-        padding: 1rem 1.5rem 0;
+        padding: 0;
+      }
+      .appointment-card {
+        padding: 1rem;
+      }
+      .form-panel-heading h3 {
+        font-size: 1.45rem;
+      }
+      .form-footer-grid {
+        grid-template-columns: 1fr;
       }
       .signature-row {
         gap: 1.5rem;
@@ -252,7 +339,7 @@
         <a href="services.html">Services</a>
         <a href="blogListing.html">Blog</a>
         <a href="contactUs.html">Contact</a>
-        <a class="btn btn-sm" href="#enquiry-form">Book a Consultation</a>
+        <a class="btn btn-sm" href="#client-form">Book a Consultation</a>
       </nav>
     </div>
   </header>
@@ -322,13 +409,15 @@
           <div class="paper-header-wrapper">
             <div class="paper-logo-area">
               <img src="assets/bdLogo.png" alt="Big Dream Logo">
-              <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px; text-align: left;">
-                <span style="font-size: 1.2rem; font-weight: 800; color: #a9823e; line-height: 1;">BIG DREAM</span>
-                <span style="font-size: 0.65rem; font-weight: 600; color: #1e293b; letter-spacing: 0.5px;">Education &amp; Visa Services</span>
-              </div>
             </div>
-            <div class="paper-title-bar">
-              <h2>New Client Information Form</h2>
+            <p class="booking-eyebrow">Appointment</p>
+            <div class="appointment-card">
+              <div>
+                <h3>Consultation Booking Form</h3>
+                <p>Migration and education consultation intake for Big Dream Education &amp; Visa Services.</p>
+                <p>Please complete your details below so we can review your matter properly before the consultation.</p>
+              </div>
+              <span class="appointment-close" aria-hidden="true">&times;</span>
             </div>
           </div>
 
@@ -343,6 +432,8 @@
             <form id="client-form" action="https://formsubmit.co/ajax/admin@bigdreamvisa.com.au" method="POST">
               <input type="hidden" name="_subject" value="New Client Information Form Submission">
               <input type="hidden" name="_captcha" value="false">
+
+              <p class="booking-eyebrow">Your Information</p>
 
               <div class="form-section">
                 <div class="paper-row">
@@ -465,6 +556,11 @@
                 </div>
               </div>
 
+              <div class="form-panel-heading">
+                <h3>Consultation Booking Form</h3>
+                <p>Share your visa, sponsor, and migration details so we can prepare for your consultation.</p>
+              </div>
+
               <div class="form-section">
                 <div class="paper-row">
                   <div class="row-label">Current visa</div>
@@ -506,8 +602,12 @@
 
               <div class="form-section">
                 <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: #000;">Any relevant migration issues/queries:</div>
-                <textarea class="input-line" style="border: none; border-bottom: 1px solid #000; border-radius: 0; padding: 0.5rem 0; width: 100%; resize: vertical;" rows="3" name="Migration Issues/Queries"></textarea>
-                <div style="border-bottom: 1px solid #000; height: 1.5rem; width: 100%; margin-top: 0.5rem;"></div>
+                <textarea class="input-line" style="width: 100%; resize: vertical; min-height: 120px;" rows="4" name="Migration Issues/Queries"></textarea>
+              </div>
+
+              <div class="form-panel-heading">
+                <h3>Declarations</h3>
+                <p>Please confirm the following before submitting your consultation request.</p>
               </div>
 
               <div class="form-section" style="border-bottom: none;">
@@ -548,9 +648,10 @@
               </div>
 
               <hr style="border: none; border-top: 2px solid var(--gold); margin: 2rem 0;">
-
-              <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; font-size: 0.85rem; color: #000;">
-                <div style="flex: 1; min-width: 250px;">
+              
+              <div class="form-footer-grid">
+                <div class="form-footer-card">
+                  <h4>Payment Details</h4>
                   <div style="display: flex; margin-bottom: 0.5rem;"><span style="font-weight: 700; width: 110px;">Account Name:</span> Big Dream Education Pty Ltd</div>
                   <div style="display: flex; margin-bottom: 0.5rem; align-items: center;">
                     <span style="font-weight: 700; width: 40px;">BSB:</span> <span style="width: 70px;">062692</span>
@@ -559,11 +660,11 @@
                   <div style="display: flex; margin-bottom: 0.5rem;"><span style="font-weight: 700; width: 110px;">SWIFT Code:</span> CTBAAU2S</div>
                   <div style="display: flex; margin-bottom: 0.5rem;"><span style="font-weight: 700; width: 110px;">Pay ID:</span> 11 669 816 479</div>
                 </div>
-                <div style="flex: 1; min-width: 250px;">
-                  <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: 700;">Useful Links</h4>
+                <div class="form-footer-card">
+                  <h4>Useful Links</h4>
                   <a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noreferrer" style="display: block; color: var(--navy); text-decoration: underline; margin-bottom: 0.4rem;">Registered Migration Agent</a>
-                  <a href="migrationCode.html" style="display: block; color: var(--navy); text-decoration: underline; margin-bottom: 0.4rem;">Migration Code of Conduct</a>
-                  <a href="https://www.omara.gov.au/consumer-information" target="_blank" rel="noreferrer" style="display: block; color: var(--navy); text-decoration: underline; margin-bottom: 0.4rem;">Migration Agent Consumer Guide</a>
+                  <a href="https://www.legislation.gov.au/F2021L01856/latest/text" target="_blank" rel="noreferrer" style="display: block; color: var(--navy); text-decoration: underline; margin-bottom: 0.4rem;">Migration Code of Conduct</a>
+                  <a href="https://www.mara.gov.au/get-help-visa-subsite/FIles/consumer_guide_english.pdf" target="_blank" rel="noreferrer" style="display: block; color: var(--navy); text-decoration: underline; margin-bottom: 0.4rem;">Migration Agent Consumer Guide</a>
                 </div>
               </div>
 
@@ -593,10 +694,10 @@
           <a class="social-link" href="https://www.instagram.com/bigdreamvisa" target="_blank" rel="noreferrer" aria-label="Instagram">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.5 1.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.1a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Z"/></svg>
           </a>
-          <a class="social-link" href="https://www.youtube.com/@bigdreamvisa" target="_blank" rel="noreferrer" aria-label="YouTube">
+          <a class="social-link" href="https://www.youtube.com/@BigDreamEducationVisaServices" target="_blank" rel="noreferrer" aria-label="YouTube">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.6 7.2a2.9 2.9 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.9 2.9 0 0 0-2 2A30 30 0 0 0 2 12a30 30 0 0 0 .4 4.8 2.9 2.9 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.9 2.9 0 0 0 2-2A30 30 0 0 0 22 12a30 30 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
           </a>
-          <a class="social-link" href="https://www.linkedin.com/company/big-dream-education-visa-services" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <a class="social-link" href="https://www.linkedin.com/in/big-dream-education-and-visa-services-b102a6287/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.8 3.5a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8ZM3.2 8.7H6.4V20H3.2V8.7Zm5 0h3v1.5h.1c.4-.8 1.6-1.8 3.2-1.8 3.4 0 4 2.2 4 5.2V20h-3.2v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V20H8.2V8.7Z"/></svg>
           </a>
           <a class="social-link" href="https://www.tiktok.com/@bigdreamvisa" target="_blank" rel="noreferrer" aria-label="TikTok">
@@ -629,7 +730,9 @@
     </div>
     <div>
       <h3>Legal</h3>
-      <p><a href="migrationCode.html">Migration Code of Conduct</a></p>
+      <p><a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noreferrer">Registered Migration Agent</a></p>
+      <p><a href="https://www.legislation.gov.au/F2021L01856/latest/text" target="_blank" rel="noreferrer">Migration Code of Conduct</a></p>
+      <p><a href="https://www.mara.gov.au/get-help-visa-subsite/FIles/consumer_guide_english.pdf" target="_blank" rel="noreferrer">Migration Agent Consumer Guide</a></p>
       <p><a href="consultationTerms.html">Consultation Terms and Conditions</a></p>
       <p><a href="privacyPolicy.html">Privacy Policy</a></p>
       <p><a href="termsCondition.html">Website terms of use</a></p>
