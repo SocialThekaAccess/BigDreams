@@ -214,6 +214,10 @@ button.btn {
   box-shadow: none;
 }
 
+.btn-secondary:hover {
+  box-shadow: 0 8px 24px rgba(15, 35, 56, 0.12);
+}
+
 .btn-sm {
   padding: 0.65rem 1.1rem;
   font-size: 0.875rem;
@@ -646,6 +650,43 @@ button.btn {
   color: #fbbc05;
   font-size: 1.05rem;
   letter-spacing: 0.18em;
+}
+
+.mobile-contact-bar {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  display: none;
+  gap: 0.8rem;
+  padding: 0.7rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 40px rgba(15, 35, 56, 0.16);
+  border: 1px solid rgba(23, 49, 79, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-contact-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 35, 56, 0.14);
+}
+
+.mobile-contact-btn-call {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+}
+
+.mobile-contact-btn-whatsapp {
+  background: linear-gradient(135deg, #27b067 0%, #15924f 100%);
 }
 
 .blog-card {
@@ -1191,6 +1232,14 @@ textarea {
 
   .cta-banner {
     padding: 1.5rem;
+  }
+
+  .mobile-contact-bar {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 6rem;
   }
 
   .brand img {

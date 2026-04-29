@@ -17,6 +17,7 @@ if (page && siteNav) {
       (page === "single-service" && href === "services.html") ||
       (page === "blog" && href === "blogListing.html") ||
       (page === "blog-post" && href === "blogListing.html") ||
+      (page === "migration-code" && href === "migrationCode.html") ||
       (page === "client-form" && href === "clientForm.html") ||
       (page === "contact" && href === "contactUs.html")
     ) {
@@ -130,6 +131,25 @@ document.addEventListener('DOMContentLoaded', () => {
   statCards.forEach(card => statsObserver.observe(card));
 });
 
+function injectMobileContactBar() {
+  if (document.querySelector('.mobile-contact-bar')) {
+    return;
+  }
+
+  const bar = document.createElement('div');
+  bar.className = 'mobile-contact-bar';
+  bar.innerHTML = `
+    <a class="mobile-contact-btn mobile-contact-btn-call" href="tel:+61476241532" aria-label="Call Big Dream Education and Visa Services">
+      <span>Call</span>
+    </a>
+    <a class="mobile-contact-btn mobile-contact-btn-whatsapp" href="https://wa.me/61476241532" target="_blank" rel="noreferrer" aria-label="WhatsApp Big Dream Education and Visa Services">
+      <span>WhatsApp</span>
+    </a>
+  `;
+
+  document.body.appendChild(bar);
+}
+
 function initReviewMarquee() {
   const marquee = document.querySelector('[data-review-marquee]');
   if (!marquee || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -189,3 +209,4 @@ function initReviewMarquee() {
 }
 
 document.addEventListener('DOMContentLoaded', initReviewMarquee);
+document.addEventListener('DOMContentLoaded', injectMobileContactBar);
