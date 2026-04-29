@@ -10,6 +10,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
+  <style>
+    .guide-shell {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .guide-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid rgba(23, 49, 79, 0.08);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    }
+    .guide-toolbar h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.3rem;
+    }
+    .guide-toolbar p {
+      margin: 0;
+    }
+    .guide-frame {
+      width: 100%;
+      min-height: 960px;
+      border: 1px solid rgba(23, 49, 79, 0.08);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .guide-frame iframe {
+      width: 100%;
+      height: 960px;
+      border: 0;
+      border-radius: 18px;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .guide-frame {
+        min-height: 720px;
+      }
+      .guide-frame iframe {
+        height: 720px;
+      }
+    }
+  </style>
 </head>
 <body data-page="migration-code">
   <header class="site-header">
@@ -39,37 +86,24 @@
           <p>This page explains the service standards Big Dream Education &amp; Visa Services aims to follow when providing migration guidance, education support, and related client communication.</p>
         </div>
         <div class="hero-image-box">
-          <img src="assets/WinstonMcNamara.jpg" alt="Winston McNamara" class="hero-photo photo-safe-center">
+          <img src="assets/winston-senior-agent.png" alt="Winston McNamara" class="hero-photo photo-safe-center">
           <div class="image-badge">Clarity, Respect, Accountability</div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container legal-card">
-        <h2>Our commitment</h2>
-        <p>Big Dream provides migration and education support with a focus on clear communication, respectful service, honest guidance, and careful handling of client matters. We aim to explain each process in practical terms so clients can make informed decisions about their options in Australia.</p>
-
-        <h2>Professional and ethical conduct</h2>
-        <p>We aim to act professionally in all dealings with clients, government authorities, education providers, and third parties. This includes treating people with courtesy, avoiding misleading statements, and not encouraging unrealistic or non-compliant migration outcomes.</p>
-
-        <h2>Clear information before work begins</h2>
-        <p>Before formal work starts, clients should receive enough information to understand the scope of assistance, likely next steps, expected documents, fees where applicable, and any important limitations. Initial discussions are intended to help clients understand the process and whether our services are suitable for their needs.</p>
-
-        <h2>Communication during a matter</h2>
-        <p>We aim to keep clients updated on material progress, requests for documents, and significant developments affecting their matter. Timeframes may vary depending on the type of visa, education application, assessment body, or government processing requirements.</p>
-
-        <h2>Confidentiality and records</h2>
-        <p>Personal information and documents shared with Big Dream are handled with care and used for enquiry management, case assessment, education support, migration assistance, and related administration. We aim to maintain appropriate internal records so communication and document handling remain organised and accurate.</p>
-
-        <h2>Fees, payments, and fairness</h2>
-        <p>Where paid services are offered, fees and payment expectations should be communicated as clearly as possible. If circumstances change, we aim to explain the impact on the work required, any revised scope, and any further steps needed before continuing.</p>
-
-        <h2>Respectful interactions</h2>
-        <p>Big Dream expects respectful conduct from team members, clients, and visitors. Aggressive, threatening, abusive, or discriminatory behaviour may result in a meeting or communication being ended, delayed, or refused if necessary to protect staff and maintain a safe professional environment.</p>
-
-        <h2>Questions or concerns</h2>
-        <p>If you have questions about our service standards, the handling of your matter, or the way information has been communicated, please contact Big Dream Education Pty Ltd at <a href="mailto:admin@bigdreamvisa.com.au">admin@bigdreamvisa.com.au</a> or call <a href="tel:+61476241532">+61 476 241 532</a>.</p>
+      <div class="container guide-shell">
+        <div class="guide-toolbar">
+          <div>
+            <h2>Code of Conduct Guide</h2>
+            <p>View the official guide below or open the PDF in a new tab.</p>
+          </div>
+          <a class="btn" href="assets/code-of-conduct-guide.pdf" target="_blank" rel="noreferrer">Open Guide PDF</a>
+        </div>
+        <div class="guide-frame">
+          <iframe src="assets/code-of-conduct-guide.pdf" title="Code of Conduct Guide PDF"></iframe>
+        </div>
       </div>
     </section>
   </main>

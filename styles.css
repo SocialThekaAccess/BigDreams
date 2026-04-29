@@ -288,6 +288,23 @@ button.btn {
   color: var(--navy);
 }
 
+.hero-review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.btn-google {
+  background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+  box-shadow: 0 2px 8px rgba(26, 115, 232, 0.2);
+}
+
+.btn-google:hover {
+  box-shadow: 0 8px 24px rgba(26, 115, 232, 0.28);
+}
+
 .hero-card,
 .accent-panel,
 .profile-card,
@@ -460,10 +477,175 @@ button.btn {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.team-merged-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.team-merged-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.team-merged-media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f7f8fa 0%, #eef2f6 100%);
+}
+
+.team-merged-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.team-merged-body {
+  padding: 1.45rem 1.5rem 1.6rem;
+}
+
+.team-merged-body h3 {
+  margin-bottom: 0.35rem;
+}
+
+.team-merged-body .pill {
+  margin-bottom: 0.9rem;
+}
+
+.team-statline {
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gold-deep);
+}
+
 .profile-card,
 .quote-card,
 .blog-card {
   padding: 1.8rem;
+}
+
+.google-review-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(26, 115, 232, 0.14);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at top right, rgba(66, 133, 244, 0.12), transparent 32%),
+    linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+  box-shadow: var(--shadow);
+}
+
+.google-review-kicker {
+  margin-bottom: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a73e8;
+}
+
+.google-review-grid {
+  margin-top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  overflow: hidden;
+  align-items: stretch;
+  padding-bottom: 0.25rem;
+}
+
+.google-review-card {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+  flex: 0 0 clamp(280px, 32vw, 390px);
+  min-height: 100%;
+}
+
+.google-review-card h3,
+.google-review-card p,
+.google-review-card a {
+  margin: 0;
+}
+
+.reviewer-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.reviewer-avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.avatar-brown {
+  background: #76503e;
+}
+
+.avatar-sky {
+  background: #9db7c8;
+}
+
+.avatar-pink {
+  background: #e64283;
+}
+
+.avatar-slate {
+  background: #6f818f;
+}
+
+.avatar-royal {
+  background: #5d6de0;
+}
+
+.avatar-photo {
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(23, 49, 79, 0.08);
+}
+
+.avatar-anshuman {
+  background-image:
+    linear-gradient(135deg, rgba(34, 83, 46, 0.2), rgba(214, 180, 79, 0.35)),
+    url("assets/ai-home-expert-consultation.png");
+}
+
+.avatar-ricardo {
+  background-image:
+    linear-gradient(135deg, rgba(42, 86, 51, 0.15), rgba(53, 112, 155, 0.28)),
+    url("assets/ai-about-consultation.png");
+}
+
+.avatar-pardeep {
+  background-image:
+    linear-gradient(135deg, rgba(34, 38, 74, 0.35), rgba(126, 38, 87, 0.3)),
+    url("assets/perth-office.png");
+}
+
+.review-meta {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.review-stars {
+  color: #fbbc05;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
 }
 
 .blog-card {
@@ -935,6 +1117,14 @@ textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .google-review-banner {
+    padding: 1.6rem;
+  }
+
+  .google-review-card {
+    flex-basis: 340px;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -975,12 +1165,28 @@ textarea {
 
   .service-grid,
   .team-grid,
+  .team-merged-grid,
   .testimonial-grid,
   .blog-grid,
   .timeline,
   .mini-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .google-review-card {
+    flex-basis: 300px;
+  }
+
+  .hero-review-actions,
+  .google-review-banner,
+  .section-actions {
+    align-items: stretch;
+  }
+
+  .google-review-banner,
+  .cta-banner {
+    flex-direction: column;
   }
 
   .cta-banner {

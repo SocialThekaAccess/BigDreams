@@ -129,3 +129,63 @@ document.addEventListener('DOMContentLoaded', () => {
   const statCards = document.querySelectorAll('.stat-card');
   statCards.forEach(card => statsObserver.observe(card));
 });
+
+function initReviewMarquee() {
+  const marquee = document.querySelector('[data-review-marquee]');
+  if (!marquee || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const originalCards = Array.from(marquee.children);
+  if (originalCards.length === 0) {
+    return;
+  }
+
+  originalCards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    marquee.appendChild(clone);
+  });
+
+  let paused = false;
+  let animationFrameId = 0;
+  const speed = window.innerWidth < 760 ? 0.35 : 0.55;
+
+  const step = () => {
+    if (!paused) {
+      marquee.scrollLeft += speed;
+
+      if (marquee.scrollLeft >= marquee.scrollWidth / 2) {
+        marquee.scrollLeft = 0;
+      }
+    }
+
+    animationFrameId = window.requestAnimationFrame(step);
+  };
+
+  marquee.addEventListener('mouseenter', () => {
+    paused = true;
+  });
+
+  marquee.addEventListener('mouseleave', () => {
+    paused = false;
+  });
+
+  marquee.addEventListener('focusin', () => {
+    paused = true;
+  });
+
+  marquee.addEventListener('focusout', () => {
+    paused = false;
+  });
+
+  animationFrameId = window.requestAnimationFrame(step);
+
+  window.addEventListener('beforeunload', () => {
+    if (animationFrameId) {
+      window.cancelAnimationFrame(animationFrameId);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initReviewMarquee);
