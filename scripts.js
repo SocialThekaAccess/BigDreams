@@ -18,6 +18,7 @@ if (page && siteNav) {
       (page === "blog" && href === "blogListing.html") ||
       (page === "blog-post" && href === "blogListing.html") ||
       (page === "migration-code" && href === "migrationCode.html") ||
+      (page === "consultation-terms" && href === "clientForm.html") ||
       (page === "client-form" && href === "clientForm.html") ||
       (page === "contact" && href === "contactUs.html")
     ) {
