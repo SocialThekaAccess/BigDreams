@@ -285,6 +285,10 @@ button.btn {
   gap: 1rem;
 }
 
+.cta-primary-btn {
+  min-width: 220px;
+}
+
 .trust-line {
   margin-top: 1.4rem;
   font-size: 0.875rem;
