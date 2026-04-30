@@ -1127,7 +1127,7 @@ textarea {
   width: min(100%, 430px);
   min-height: 390px;
   border-radius: 38px 38px 0 38px;
-  background: linear-gradient(180deg, #52c58f 0%, #43b77f 100%);
+  background: transparent;
   display: flex;
   align-items: flex-end;
   justify-content: center;
