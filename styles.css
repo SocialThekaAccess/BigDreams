@@ -1857,6 +1857,15 @@ textarea {
   padding: 2rem;
 }
 
+.about-journey-content h2,
+.about-journey-content p {
+  color: #fff;
+}
+
+.about-journey-actions {
+  justify-content: center;
+}
+
 /* Interactive Stats */
 .stats-grid {
   display: grid;
