@@ -1031,7 +1031,7 @@ textarea {
 }
 
 .consultation-hero h1 span {
-  color: #66c69a;
+  color: var(--gold-deep);
 }
 
 .consultation-body {
