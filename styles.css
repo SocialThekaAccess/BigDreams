@@ -1011,8 +1011,9 @@ textarea {
 .consultation-hero {
   padding: 4.75rem 0 5.5rem;
   background:
-    radial-gradient(circle at top left, rgba(200, 162, 96, 0.12), transparent 30%),
-    linear-gradient(180deg, #fbf7f0 0%, #f8f2e8 100%);
+    radial-gradient(circle at top left, rgba(200, 162, 96, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(23, 49, 79, 0.08), transparent 34%),
+    linear-gradient(135deg, #f8fbfd 0%, #edf3f8 100%);
 }
 
 .consultation-hero-inner {
