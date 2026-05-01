@@ -493,8 +493,8 @@
       <div class="container contact-form-shell">
         <div class="section-head">
           <p class="eyebrow">Consultation Booking</p>
-          <h2>Complete Your Client Information Form</h2>
-          <p>This form is only for visitors who are booking a consultation and need a full case assessment.</p>
+          <h2>Choose Your Booking Time and Complete Your Client Information Form</h2>
+          <p>Please choose your preferred consultation time first, then complete the form so we can review your matter properly.</p>
         </div>
 
         <div id="enquiry-form" class="paper-form">
@@ -507,7 +507,7 @@
               <div>
                 <h3>Consultation Booking Form</h3>
                 <p>Migration and education consultation intake for Big Dream Education &amp; Visa Services.</p>
-                <p>Please complete your details below so we can review your matter properly before the consultation.</p>
+                <p>Please choose your preferred booking time first, then complete your details below.</p>
               </div>
               <span class="appointment-close" aria-hidden="true">&times;</span>
             </div>
@@ -524,6 +524,41 @@
             <form id="client-form" action="https://formsubmit.co/ajax/admin@bigdreamvisa.com.au" method="POST">
               <input type="hidden" name="_subject" value="New Client Information Form Submission">
               <input type="hidden" name="_captcha" value="false">
+
+              <p class="booking-eyebrow">Booking Time</p>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Preferred booking</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Preferred Date</label>
+                        <input type="date" class="input-line" name="Preferred Consultation Date" required>
+                      </div>
+                      <div class="input-group">
+                        <label>Preferred Time</label>
+                        <input type="time" class="input-line" name="Preferred Consultation Time" required>
+                      </div>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Consultation Type</label>
+                        <select class="input-line" name="Consultation Type" required>
+                          <option value="">Select consultation type</option>
+                          <option value="In Person">In Person</option>
+                          <option value="Phone Call">Phone Call</option>
+                          <option value="Video Call">Video Call</option>
+                        </select>
+                      </div>
+                      <div class="input-group">
+                        <label>Alternative Time (Optional)</label>
+                        <input type="time" class="input-line" name="Alternative Consultation Time">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <p class="booking-eyebrow">Your Information</p>
 
@@ -651,8 +686,8 @@
                   <div class="row-label">Occupation</div>
                   <div class="row-content">
                     <div class="input-group">
-                      <label>Occupation</label>
-                      <input type="text" class="input-line" name="Occupation">
+                      <label>For example</label>
+                      <input type="text" class="input-line" name="Occupation" placeholder="Chef, Manager, Electrician">
                     </div>
                   </div>
                 </div>
