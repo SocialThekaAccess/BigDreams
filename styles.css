@@ -1046,6 +1046,25 @@ textarea {
   color: rgba(23, 49, 79, 0.88);
 }
 
+.consultation-copy p,
+.consultation-copy li {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.consultation-copy p {
+  margin: 0 0 1rem;
+}
+
+.consultation-copy a {
+  color: var(--navy);
+}
+
+.consultation-copy strong {
+  color: var(--navy);
+}
+
 .consultation-updated {
   margin-bottom: 2rem;
   font-size: 0.84rem;
