@@ -1552,6 +1552,10 @@ textarea {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.hero-image-box-full {
+  background: #eef3f7;
+}
+
 .hero-image-box::before,
 .intro-image-box::before {
   content: "";
@@ -1586,6 +1590,14 @@ textarea {
 
 .hero-photo {
   min-height: 320px;
+}
+
+.hero-photo-full {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center center;
+  background: #eef3f7;
 }
 
 .intro-image-box {
@@ -2170,6 +2182,10 @@ textarea {
 
   .hero-photo {
     min-height: 240px;
+  }
+
+  .hero-photo-full {
+    min-height: 0;
   }
 
   .intro-photo {
