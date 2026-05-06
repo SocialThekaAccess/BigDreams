@@ -6,9 +6,6 @@
   <meta http-equiv="refresh" content="0; url=contactUs.html#client-form">
   <title>Client Information Form | Big Dream Education &amp; Visa Services</title>
   <meta name="description" content="Client information form for Big Dream Education & Visa Services.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
   <style>
@@ -170,12 +167,23 @@
         width: 100%;
         margin-bottom: 0.25rem;
       }
+      .form-row,
       .form-row.stack-mobile {
         flex-direction: column;
         align-items: flex-start;
       }
       .input-group {
         width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .sig-input-group,
+      .sig-input-group.flex-grow {
+        width: 100%;
+        min-width: 0;
+      }
+      .sig-input-group label {
+        white-space: normal;
       }
       .paper-content {
         padding: 1.5rem;
@@ -245,7 +253,7 @@
 <body data-page="client-form">
   <header class="site-header">
     <div class="container nav-shell">
-<a class="brand" href="index.html"><img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo"></a>
+    <a class="brand" href="index.html"><img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo" decoding="async"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="migrationCode.html">Our Professional Standards</a><a href="blogListing.html">Blog</a><a href="contactUs.html">Contact</a>
@@ -260,7 +268,7 @@
         <div class="paper-form">
           <div class="paper-header-wrapper">
             <div class="paper-logo-area">
-      <img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo">
+            <img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo" decoding="async">
               <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px; text-align: left;">
       <span style="font-size: 1.2rem; font-weight: 800; color: #a9823e; line-height: 1;">BIG DREAM EDUCATION &amp; VISA SERVICES</span>
                 <span style="font-size: 0.65rem; font-weight: 600; color: #1e293b; letter-spacing: 0.5px;">Education & Visa Services</span>

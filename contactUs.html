@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Big Dream Education &amp; Visa Services</title>
   <meta name="description" content="Contact Big Dream Education &amp; Visa Services in Perth for migration and education enquiries.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
   <style>
@@ -346,11 +343,20 @@
         width: 100%;
         margin-bottom: 0.25rem;
       }
+      .paper-content .form-row,
       .paper-content .form-row.stack-mobile {
         grid-template-columns: 1fr;
       }
       .paper-content .input-group {
         width: 100%;
+      }
+      .sig-input-group,
+      .sig-input-group.flex-grow {
+        width: 100%;
+        min-width: 0;
+      }
+      .sig-input-group label {
+        white-space: normal;
       }
       .paper-content {
         padding: 1.25rem;
@@ -362,6 +368,8 @@
         padding: 0;
       }
       .appointment-card {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 1rem;
       }
       .form-panel-heading h3 {
@@ -378,6 +386,14 @@
       .contact-quick-grid {
         grid-template-columns: 1fr;
       }
+
+      .paper-content .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .appointment-card {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -385,7 +401,7 @@
   <header class="site-header">
     <div class="container nav-shell">
       <a class="brand" href="index.html" aria-label="Big Dream Education &amp; Visa Services home">
-        <img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo">
+        <img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo" decoding="async">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span><span></span>
@@ -414,7 +430,7 @@
           </div>
         </div>
         <div class="hero-image-box">
-          <img src="assets/contact-design.png" alt="Sydney skyline visual for Big Dream Education &amp; Visa Services" class="hero-photo photo-safe-center">
+          <img src="assets/contact-design.jpg" alt="Sydney skyline visual for Big Dream Education &amp; Visa Services" class="hero-photo photo-safe-center" fetchpriority="high">
           <div class="image-badge">Perth Office, Friendly Support</div>
         </div>
       </div>
@@ -456,14 +472,14 @@
         </div>
         <div class="image-gallery">
           <div class="gallery-item">
-            <img src="assets/contact-office-reception.png" alt="Office reception visual for Big Dream Education &amp; Visa Services" class="gallery-photo photo-safe-center">
+                <img src="assets/contact-office-reception.jpg" alt="Office reception visual for Big Dream Education &amp; Visa Services" class="gallery-photo photo-safe-center" loading="lazy" decoding="async">
             <div class="gallery-caption">
               <h4>Office Reception</h4>
               <p>Welcoming consultation space in Bennett Springs.</p>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="assets/contact-meeting-room.png" alt="Meeting room visual for Big Dream Education &amp; Visa Services" class="gallery-photo photo-safe-center">
+                <img src="assets/contact-meeting-room.jpg" alt="Meeting room visual for Big Dream Education &amp; Visa Services" class="gallery-photo photo-safe-center" loading="lazy" decoding="async">
             <div class="gallery-caption">
               <h4>Meeting Room</h4>
               <p>Private consultations with clear and practical advice.</p>
@@ -480,7 +496,7 @@
             </a>
             <div class="gallery-caption">
               <h4>Easy to Reach</h4>
-              <p>A convenient Perth location with a calm, professional environment.</p>
+              <p>Perth location with a calm, professional environment.</p>
             </div>
           </div>
         </div>
@@ -498,7 +514,7 @@
         <div id="enquiry-form" class="paper-form">
           <div class="paper-header-wrapper">
             <div class="paper-logo-area">
-              <img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo">
+          <img src="assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education &amp; Visa Services logo" decoding="async">
             </div>
             <p class="booking-eyebrow">Appointment</p>
             <div class="appointment-card">

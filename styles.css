@@ -33,11 +33,12 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   color: var(--text);
   background: #ffffff;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 img {
@@ -55,13 +56,14 @@ p {
   font-size: 1rem;
   line-height: 1.72;
   color: var(--text-muted);
+  overflow-wrap: anywhere;
 }
 
 h1,
 h2,
 h3 {
   margin: 0 0 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: inherit;
   line-height: 1.15;
   color: var(--navy-deep);
 }
@@ -304,6 +306,7 @@ button.btn {
   color: var(--navy);
   padding-top: 1rem;
   border-top: 1px solid rgba(23, 49, 79, 0.08);
+  overflow-wrap: anywhere;
 }
 
 .btn-google {
@@ -570,6 +573,15 @@ button.btn {
   overflow: hidden;
   align-items: stretch;
   padding-bottom: 0.25rem;
+}
+
+.google-review-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.google-review-grid::-webkit-scrollbar-thumb {
+  background: rgba(23, 49, 79, 0.14);
+  border-radius: 999px;
 }
 
 .google-review-card {
@@ -1324,6 +1336,22 @@ textarea {
     --section-space: 3.5rem;
   }
 
+  .container {
+    width: min(calc(100% - 1.25rem), var(--container));
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+
+  .nav-shell {
+    min-height: 78px;
+  }
+
   .site-nav {
     position: absolute;
     top: calc(100% + 0.75rem);
@@ -1344,7 +1372,7 @@ textarea {
   }
 
   .site-nav a {
-    padding: 0.25rem 0;
+    padding: 0.45rem 0;
   }
 
   .nav-toggle {
@@ -1421,6 +1449,14 @@ textarea {
     padding: 2.2rem 0 1.75rem;
   }
 
+  .hero-copy {
+    order: 1;
+  }
+
+  .hero-image-box {
+    order: 2;
+  }
+
   .hero-actions,
   .cta-actions,
   .section-actions {
@@ -1440,6 +1476,10 @@ textarea {
     max-width: 100%;
   }
 
+  .lead {
+    font-size: 0.98rem;
+  }
+
   .trust-line {
     font-size: 0.82rem;
     line-height: 1.6;
@@ -1451,6 +1491,60 @@ textarea {
 
   .pill {
     font-size: 0.68rem;
+  }
+
+  .ribbon-row {
+    justify-content: center;
+    text-align: center;
+    gap: 0.7rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .google-review-banner .section-actions,
+  .cta-banner .cta-actions {
+    width: 100%;
+  }
+
+  .google-review-grid {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 0.6rem;
+  }
+
+  .google-review-card {
+    flex-basis: min(84vw, 320px);
+    scroll-snap-align: start;
+  }
+
+  .image-badge {
+    max-width: calc(100% - 1.7rem);
+  }
+
+  .consultation-hero h1 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+    line-height: 1.02;
+  }
+
+  .guide-actions {
+    width: 100%;
+  }
+
+  .guide-actions .btn,
+  .guide-actions .text-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .guide-frame-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .guide-frame iframe {
+    height: 70vh;
+    min-height: 480px;
   }
 }
 /* Immigration Journey Slider */
