@@ -121,12 +121,10 @@ function initContactBookingForm() {
   }
 
   const form = document.getElementById("client-form");
-  const bookingShell = document.getElementById("live-booking-shell");
-  const bookingContainer = document.getElementById("live-booking-container");
-  const bookingFallback = document.getElementById("live-booking-fallback");
-  const bookingLink = document.getElementById("live-booking-link");
   const consultationTypeField = document.getElementById("consultation-type");
   const durationField = document.getElementById("consultation-duration");
+  const bookingDateField = document.getElementById("booking-date");
+  const bookingSlotField = document.getElementById("booking-slot");
   const bookingStatus = document.getElementById("booking-status");
   const successMessage = document.getElementById("form-success");
   const errorMessage = document.getElementById("form-error");
@@ -137,12 +135,10 @@ function initContactBookingForm() {
 
   if (
     !form ||
-    !bookingShell ||
-    !bookingContainer ||
-    !bookingFallback ||
-    !bookingLink ||
     !consultationTypeField ||
     !durationField ||
+    !bookingDateField ||
+    !bookingSlotField ||
     !bookingStatus ||
     !submitBtn
   ) {
@@ -150,7 +146,9 @@ function initContactBookingForm() {
   }
 
   const perthTimeZone = "Australia/Perth";
-  const consultationDurationMinutes = 45;
+  const bookingWindowDays = 45;
+  const consultationDurationMinutes = 60;
+  const consultationBufferMinutes = 30;
   const bookingTypeDurations = {
     "In Person": consultationDurationMinutes,
     "Phone Call": consultationDurationMinutes,
@@ -179,6 +177,54 @@ function initContactBookingForm() {
     };
   }
 
+  function createDateFromIso(isoDate) {
+    const [year, month, day] = isoDate.split("-").map(Number);
+    return new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
+  }
+
+  function addDays(isoDate, daysToAdd) {
+    const date = createDateFromIso(isoDate);
+    date.setUTCDate(date.getUTCDate() + daysToAdd);
+    return date.toISOString().slice(0, 10);
+  }
+
+  function formatDateLabel(isoDate) {
+    return new Intl.DateTimeFormat("en-AU", {
+      timeZone: perthTimeZone,
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    }).format(createDateFromIso(isoDate));
+  }
+
+  function formatTimeLabel(time24) {
+    const [hours, minutes] = time24.split(":").map(Number);
+    const displayDate = new Date(Date.UTC(2000, 0, 1, hours, minutes, 0));
+    return new Intl.DateTimeFormat("en-AU", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "UTC"
+    }).format(displayDate);
+  }
+
+  function addMinutes(time24, minutesToAdd) {
+    const [hours, minutes] = time24.split(":").map(Number);
+    const totalMinutes = (hours * 60) + minutes + minutesToAdd;
+    const nextHours = Math.floor(totalMinutes / 60);
+    const nextMinutes = totalMinutes % 60;
+    return `${String(nextHours).padStart(2, "0")}:${String(nextMinutes).padStart(2, "0")}`;
+  }
+
+  function resetSelectOptions(selectNode, placeholder) {
+    selectNode.innerHTML = "";
+    const placeholderOption = document.createElement("option");
+    placeholderOption.value = "";
+    placeholderOption.textContent = placeholder;
+    selectNode.appendChild(placeholderOption);
+  }
+
   function setBookingStatus(message, isError = false) {
     bookingStatus.textContent = message;
     bookingStatus.classList.toggle("is-error", isError);
@@ -189,37 +235,74 @@ function initContactBookingForm() {
     durationField.value = `${duration} minutes`;
   }
 
-  function initLiveBookingSurface() {
-    const bookingUrl = (bookingShell.dataset.bookingUrl || "").trim();
-    const providerLabel = (bookingShell.dataset.bookingProvider || "live calendar").trim();
-    const embedEnabled = bookingShell.dataset.bookingEmbed === "true";
+  function getPreferredDates() {
+    const nowInPerth = getZonedNow(perthTimeZone);
+    const dates = [];
 
-    bookingContainer.innerHTML = "";
-    bookingLink.hidden = true;
+    for (let offset = 1; offset <= bookingWindowDays; offset += 1) {
+      const isoDate = addDays(nowInPerth.isoDate, offset);
+      const weekday = createDateFromIso(isoDate).getUTCDay();
 
-    if (!bookingUrl) {
-      setBookingStatus("Add your public booking URL to activate live scheduling on this page.", true);
-      bookingFallback.hidden = false;
-      return;
+      if (weekday >= 1 && weekday <= 5) {
+        dates.push(isoDate);
+      }
     }
 
-    bookingLink.href = bookingUrl;
-    bookingLink.textContent = `Open ${providerLabel}`;
-    bookingLink.hidden = false;
+    return dates;
+  }
 
-    if (embedEnabled) {
-      const iframe = document.createElement("iframe");
-      iframe.src = bookingUrl;
-      iframe.title = `${providerLabel} booking calendar`;
-      iframe.loading = "lazy";
-      bookingContainer.appendChild(iframe);
-      bookingFallback.hidden = true;
-      setBookingStatus(`Live booking is connected to ${providerLabel}. Clients will only see real appointment availability.`, false);
-      return;
+  function getPreferredTimeSlots() {
+    const slots = [];
+    let totalMinutes = 9 * 60;
+    const lastStartMinutes = (18 * 60) - consultationDurationMinutes;
+    const stepMinutes = consultationDurationMinutes + consultationBufferMinutes;
+
+    while (totalMinutes <= lastStartMinutes) {
+      const hours = Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes % 60;
+      slots.push(`${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`);
+      totalMinutes += stepMinutes;
     }
 
-    bookingFallback.hidden = false;
-    setBookingStatus(`Live booking is connected to ${providerLabel}. Use the button above to open the real appointment calendar.`, false);
+    return slots;
+  }
+
+  function populatePreferredDates() {
+    const currentValue = bookingDateField.value;
+    const availableDates = getPreferredDates();
+
+    resetSelectOptions(bookingDateField, "Select preferred date");
+
+    availableDates.forEach((isoDate) => {
+      const option = document.createElement("option");
+      option.value = isoDate;
+      option.textContent = formatDateLabel(isoDate);
+      bookingDateField.appendChild(option);
+    });
+
+    if (availableDates.includes(currentValue)) {
+      bookingDateField.value = currentValue;
+    }
+  }
+
+  function populatePreferredTimeSlots() {
+    const currentValue = bookingSlotField.value;
+    const availableSlots = getPreferredTimeSlots();
+    const duration = bookingTypeDurations[consultationTypeField.value] || consultationDurationMinutes;
+
+    resetSelectOptions(bookingSlotField, "Select preferred time");
+
+    availableSlots.forEach((slot) => {
+      const option = document.createElement("option");
+      const endTime = addMinutes(slot, duration);
+      option.value = slot;
+      option.textContent = `${formatTimeLabel(slot)} - ${formatTimeLabel(endTime)} AWST`;
+      bookingSlotField.appendChild(option);
+    });
+
+    if (availableSlots.includes(currentValue)) {
+      bookingSlotField.value = currentValue;
+    }
   }
 
   if (declarationDateField) {
@@ -233,6 +316,7 @@ function initContactBookingForm() {
 
   consultationTypeField.addEventListener("change", () => {
     updateDuration();
+    populatePreferredTimeSlots();
   });
 
   form.addEventListener("submit", (event) => {
@@ -259,7 +343,9 @@ function initContactBookingForm() {
           successMessage.style.display = "block";
           form.reset();
           updateDuration();
-          setBookingStatus("Complete the live calendar booking first, then submit the client information form below.");
+          populatePreferredDates();
+          populatePreferredTimeSlots();
+          setBookingStatus("Choose your preferred date and time in AWST. Our team will contact you to confirm the final appointment time.");
           if (declarationDateField) {
             declarationDateField.value = getZonedNow(perthTimeZone).isoDate;
           }
@@ -271,7 +357,9 @@ function initContactBookingForm() {
         successMessage.innerHTML = "<strong>Success!</strong> If this is your first submission, please check your email to activate the form. Otherwise, your booking request was received and a confirmation email should follow shortly.";
         form.reset();
         updateDuration();
-        setBookingStatus("Complete the live calendar booking first, then submit the client information form below.");
+        populatePreferredDates();
+        populatePreferredTimeSlots();
+        setBookingStatus("Choose your preferred date and time in AWST. Our team will contact you to confirm the final appointment time.");
         if (declarationDateField) {
           declarationDateField.value = getZonedNow(perthTimeZone).isoDate;
         }
@@ -288,7 +376,8 @@ function initContactBookingForm() {
   });
 
   updateDuration();
-  initLiveBookingSurface();
+  populatePreferredDates();
+  populatePreferredTimeSlots();
 }
 
 document.addEventListener('DOMContentLoaded', initReviewMarquee);

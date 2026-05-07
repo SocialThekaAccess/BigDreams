@@ -570,8 +570,8 @@
       <div class="container contact-form-shell">
         <div class="section-head">
           <p class="eyebrow">Consultation Booking</p>
-          <h2>Book Your Live Consultation and Complete Your Client Information Form</h2>
-          <p>Use the live calendar below so clients only see real appointment availability. After booking, complete the intake form so the team can prepare for the consultation properly.</p>
+          <h2>Request Your Preferred Consultation Time and Complete Your Client Information Form</h2>
+          <p>Clients can request a preferred consultation date and time within business hours. Our team will review the request and get in touch to confirm the final booking time.</p>
         </div>
 
         <div id="enquiry-form" class="paper-form">
@@ -584,43 +584,31 @@
               <div>
                 <h3>Consultation Booking Form</h3>
                 <p>Migration and education consultation intake for Big Dream Education &amp; Visa Services.</p>
-                <p>Book from the live calendar first, then complete your client details below.</p>
+                <p>Select your preferred consultation date and time first, then complete your client details below.</p>
               </div>
             </div>
           </div>
 
           <div id="form-success" class="success-message">
-            <strong>Success!</strong> Your client information form has been submitted successfully. Your booking confirmation will come from the live calendar service you used.
+            <strong>Success!</strong> Your client information form has been submitted successfully. Our team will contact you to confirm your booking time.
           </div>
           <div id="form-error" class="error-message">
             <strong>Error!</strong> There was a problem submitting your form. Please try again.
           </div>
 
           <div class="paper-content">
-            <div id="live-booking-shell" class="live-booking-shell" data-booking-url="" data-booking-provider="live calendar" data-booking-embed="false">
-              <div class="live-booking-card">
-                <h3>Step 1: Choose a Live Appointment Slot</h3>
-                <p>The live booking calendar should be connected here so clients only see real availability and receive automatic appointment confirmations.</p>
-              </div>
-              <div id="live-booking-container" class="live-booking-frame"></div>
-              <div id="live-booking-fallback" class="booking-fallback booking-status is-error">
-                <p>Add your public booking link to activate live scheduling on this page.</p>
-                <a id="live-booking-link" class="btn" href="#" target="_blank" rel="noreferrer" hidden>Open Live Booking Calendar</a>
-              </div>
-            </div>
-
             <form id="client-form" action="https://formsubmit.co/ajax/admin@bigdreamvisa.com.au" method="POST">
               <input type="hidden" name="_subject" value="New Client Information Form Submission">
               <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_autoresponse" value="Thank you for submitting your client information form to Big Dream Education & Visa Services. If you have not already booked your consultation, please use the live booking calendar on our website.">
+              <input type="hidden" name="_autoresponse" value="Thank you for contacting Big Dream Education & Visa Services. We have received your consultation request and our team will contact you to confirm your booking time.">
 
               <p class="booking-eyebrow">Booking Time</p>
 
               <div class="form-section">
                 <div class="paper-row">
-                  <div class="row-label">Live booking</div>
+                  <div class="row-label">Preferred booking</div>
                   <div class="row-content">
-                    <p class="booking-note">Use the live calendar above for real appointment availability. The intake form below does not create a booking by itself.</p>
+                    <p class="booking-note">Consultations are 60 minutes. Preferred appointments are available Monday to Friday between 9:00 AM and 6:00 PM AWST. Our team will get in touch with you for final confirmation of the booking time.</p>
                     <div class="form-row stack-mobile">
                       <div class="input-group">
                         <label for="consultation-type">Consultation Type</label>
@@ -633,20 +621,24 @@
                       </div>
                       <div class="input-group">
                         <label for="consultation-duration">Approved Duration</label>
-                        <input id="consultation-duration" type="text" class="input-line" name="Consultation Duration" value="45 minutes" readonly>
+                        <input id="consultation-duration" type="text" class="input-line" name="Consultation Duration" value="60 minutes" readonly>
                       </div>
                     </div>
                     <div class="form-row stack-mobile">
                       <div class="input-group">
-                        <label for="booked-slot-note">Booked Appointment Note (Optional)</label>
-                        <input id="booked-slot-note" type="text" class="input-line" name="Booked Appointment Note" placeholder="Example: Tue 12 May 2026, 10:00 AM or booking reference">
+                        <label for="booking-date">Preferred Date of Meeting</label>
+                        <select id="booking-date" class="input-line" name="Preferred Consultation Date" required>
+                          <option value="">Select preferred date</option>
+                        </select>
                       </div>
                       <div class="input-group">
-                        <label>Booking Time Zone</label>
-                        <input type="text" class="input-line" name="Booking Time Zone" value="Australia/Perth" readonly>
+                        <label for="booking-slot">Preferred Time of Meeting</label>
+                        <select id="booking-slot" class="input-line" name="Preferred Consultation Time" required>
+                          <option value="">Select preferred time</option>
+                        </select>
                       </div>
                     </div>
-                    <p id="booking-status" class="booking-status">Complete the live calendar booking first, then submit the client information form below.</p>
+                    <p id="booking-status" class="booking-status">Choose your preferred date and time in AWST. Our team will contact you to confirm the final appointment time.</p>
                   </div>
                 </div>
               </div>
