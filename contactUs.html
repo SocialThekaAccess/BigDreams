@@ -107,13 +107,6 @@
       line-height: 1.6;
       color: #4b5563;
     }
-    .appointment-close {
-      align-self: flex-start;
-      font-size: 1.5rem;
-      line-height: 1;
-      color: #111827;
-      opacity: 0.75;
-    }
     .form-panel-heading {
       margin: 2rem 0 1rem;
     }
@@ -324,6 +317,76 @@
       color: var(--navy);
       text-decoration: underline;
     }
+    .booking-note {
+      margin: 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(23, 49, 79, 0.08);
+      border-radius: 16px;
+      background: rgba(247, 248, 250, 0.95);
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .live-booking-shell {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .live-booking-card {
+      padding: 1.25rem;
+      border: 1px solid #ececec;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+    }
+    .live-booking-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+      color: #111827;
+    }
+    .live-booking-card p {
+      margin: 0;
+    }
+    .live-booking-frame {
+      width: 100%;
+      min-height: 760px;
+      border: 1px solid #ececec;
+      border-radius: 18px;
+      background: #fff;
+    }
+    .live-booking-frame iframe {
+      width: 100%;
+      min-height: 760px;
+      border: 0;
+      display: block;
+      border-radius: 18px;
+      background: #fff;
+    }
+    .booking-fallback {
+      display: grid;
+      gap: 0.9rem;
+      align-items: start;
+    }
+    .booking-fallback p {
+      margin: 0;
+    }
+    .booking-status {
+      margin: 0;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(200, 162, 96, 0.12);
+      color: #17314f;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .booking-status.is-error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #991b1b;
+    }
+    .input-line[readonly] {
+      color: #475569;
+      cursor: default;
+    }
     @media (max-width: 640px) {
       .contact-hero-actions {
         flex-direction: column;
@@ -507,8 +570,8 @@
       <div class="container contact-form-shell">
         <div class="section-head">
           <p class="eyebrow">Consultation Booking</p>
-          <h2>Choose Your Booking Time and Complete Your Client Information Form</h2>
-          <p>Please choose your preferred consultation time first, then complete the form so we can review your matter properly.</p>
+          <h2>Book Your Live Consultation and Complete Your Client Information Form</h2>
+          <p>Use the live calendar below so clients only see real appointment availability. After booking, complete the intake form so the team can prepare for the consultation properly.</p>
         </div>
 
         <div id="enquiry-form" class="paper-form">
@@ -521,44 +584,47 @@
               <div>
                 <h3>Consultation Booking Form</h3>
                 <p>Migration and education consultation intake for Big Dream Education &amp; Visa Services.</p>
-                <p>Please choose your preferred booking time first, then complete your details below.</p>
+                <p>Book from the live calendar first, then complete your client details below.</p>
               </div>
-              <span class="appointment-close" aria-hidden="true">&times;</span>
             </div>
           </div>
 
           <div id="form-success" class="success-message">
-            <strong>Success!</strong> Your client information form has been submitted successfully. We will get back to you soon.
+            <strong>Success!</strong> Your client information form has been submitted successfully. Your booking confirmation will come from the live calendar service you used.
           </div>
           <div id="form-error" class="error-message">
             <strong>Error!</strong> There was a problem submitting your form. Please try again.
           </div>
 
           <div class="paper-content">
+            <div id="live-booking-shell" class="live-booking-shell" data-booking-url="" data-booking-provider="live calendar" data-booking-embed="false">
+              <div class="live-booking-card">
+                <h3>Step 1: Choose a Live Appointment Slot</h3>
+                <p>The live booking calendar should be connected here so clients only see real availability and receive automatic appointment confirmations.</p>
+              </div>
+              <div id="live-booking-container" class="live-booking-frame"></div>
+              <div id="live-booking-fallback" class="booking-fallback booking-status is-error">
+                <p>Add your public booking link to activate live scheduling on this page.</p>
+                <a id="live-booking-link" class="btn" href="#" target="_blank" rel="noreferrer" hidden>Open Live Booking Calendar</a>
+              </div>
+            </div>
+
             <form id="client-form" action="https://formsubmit.co/ajax/admin@bigdreamvisa.com.au" method="POST">
               <input type="hidden" name="_subject" value="New Client Information Form Submission">
               <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_autoresponse" value="Thank you for submitting your client information form to Big Dream Education & Visa Services. If you have not already booked your consultation, please use the live booking calendar on our website.">
 
               <p class="booking-eyebrow">Booking Time</p>
 
               <div class="form-section">
                 <div class="paper-row">
-                  <div class="row-label">Preferred booking</div>
+                  <div class="row-label">Live booking</div>
                   <div class="row-content">
+                    <p class="booking-note">Use the live calendar above for real appointment availability. The intake form below does not create a booking by itself.</p>
                     <div class="form-row stack-mobile">
                       <div class="input-group">
-                        <label>Preferred Date</label>
-                        <input type="date" class="input-line" name="Preferred Consultation Date" required>
-                      </div>
-                      <div class="input-group">
-                        <label>Preferred Time</label>
-                        <input type="time" class="input-line" name="Preferred Consultation Time" required>
-                      </div>
-                    </div>
-                    <div class="form-row stack-mobile">
-                      <div class="input-group">
-                        <label>Consultation Type</label>
-                        <select class="input-line" name="Consultation Type" required>
+                        <label for="consultation-type">Consultation Type</label>
+                        <select id="consultation-type" class="input-line" name="Consultation Type" required>
                           <option value="">Select consultation type</option>
                           <option value="In Person">In Person</option>
                           <option value="Phone Call">Phone Call</option>
@@ -566,10 +632,21 @@
                         </select>
                       </div>
                       <div class="input-group">
-                        <label>Alternative Time (Optional)</label>
-                        <input type="time" class="input-line" name="Alternative Consultation Time">
+                        <label for="consultation-duration">Approved Duration</label>
+                        <input id="consultation-duration" type="text" class="input-line" name="Consultation Duration" value="45 minutes" readonly>
                       </div>
                     </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label for="booked-slot-note">Booked Appointment Note (Optional)</label>
+                        <input id="booked-slot-note" type="text" class="input-line" name="Booked Appointment Note" placeholder="Example: Tue 12 May 2026, 10:00 AM or booking reference">
+                      </div>
+                      <div class="input-group">
+                        <label>Booking Time Zone</label>
+                        <input type="text" class="input-line" name="Booking Time Zone" value="Australia/Perth" readonly>
+                      </div>
+                    </div>
+                    <p id="booking-status" class="booking-status">Complete the live calendar booking first, then submit the client information form below.</p>
                   </div>
                 </div>
               </div>
