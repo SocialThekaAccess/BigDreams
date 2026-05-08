@@ -8,20 +8,30 @@ if (yearNode) {
 }
 
 if (page && siteNav) {
+  const activeNavPaths = {
+    home: ["/"],
+    about: ["/about/"],
+    services: ["/services/"],
+    "single-service": ["/services/", "/services/skills-assessment-support/"],
+    blog: ["/blog/"],
+    "blog-post": ["/blog/"],
+    "migration-code": ["/professional-standards/"],
+    "consultation-terms": ["/consultation-terms/", "/book-a-consultation/"],
+    "client-form": ["/book-a-consultation/"],
+    contact: ["/contact/"]
+  };
+
   for (const link of siteNav.querySelectorAll("a")) {
-    const href = link.getAttribute("href") || "";
-    if (
-      (page === "home" && href === "index.html") ||
-      (page === "about" && href === "about.html") ||
-      (page === "services" && href === "services.html") ||
-      (page === "single-service" && href === "services.html") ||
-      (page === "blog" && href === "blogListing.html") ||
-      (page === "blog-post" && href === "blogListing.html") ||
-      (page === "migration-code" && href === "migrationCode.html") ||
-      (page === "consultation-terms" && href === "clientForm.html") ||
-      (page === "client-form" && href === "clientForm.html") ||
-      (page === "contact" && href === "contactUs.html")
-    ) {
+    const href = link.getAttribute("href");
+    if (!href) {
+      continue;
+    }
+
+    const navPath = new URL(href, window.location.origin).pathname;
+    const normalizedNavPath = navPath === "/" ? navPath : `${navPath.replace(/\/+$/, "")}/`;
+    const activePaths = activeNavPaths[page] || [];
+
+    if (activePaths.includes(normalizedNavPath)) {
       link.classList.add("is-active");
     }
   }
