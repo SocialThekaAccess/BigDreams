@@ -255,7 +255,7 @@ function initContactBookingForm() {
     const slots = [];
     let totalMinutes = 9 * 60;
     const lastStartMinutes = (18 * 60) - consultationDurationMinutes;
-    const stepMinutes = consultationDurationMinutes + consultationBufferMinutes;
+    const stepMinutes = consultationDurationMinutes;
 
     while (totalMinutes <= lastStartMinutes) {
       const hours = Math.floor(totalMinutes / 60);
@@ -296,7 +296,7 @@ function initContactBookingForm() {
       const option = document.createElement("option");
       const endTime = addMinutes(slot, duration);
       option.value = slot;
-      option.textContent = `${formatTimeLabel(slot)} - ${formatTimeLabel(endTime)} AWST`;
+      option.textContent = `${formatTimeLabel(slot)} to ${formatTimeLabel(endTime)} AWST`;
       bookingSlotField.appendChild(option);
     });
 

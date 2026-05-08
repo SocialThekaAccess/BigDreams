@@ -469,6 +469,17 @@ button.btn {
   background: linear-gradient(90deg, var(--gold) 0%, var(--navy) 100%);
 }
 
+.section-head-services {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .section-head-services h2 {
+    white-space: nowrap;
+    font-size: clamp(2rem, 3.2vw, 2.5rem);
+  }
+}
+
 .intro-grid,
 .content-grid,
 .contact-grid,
