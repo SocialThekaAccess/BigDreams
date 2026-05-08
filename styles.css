@@ -123,14 +123,14 @@ h3 {
   height: 44px;
   max-width: 100%;
   object-fit: contain;
+  aspect-ratio: 3 / 1;
   border-radius: 0;
   box-shadow: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   flex-shrink: 0;
 }
 
 .brand:hover img {
-  transform: translateY(-1px);
   opacity: 0.9;
   box-shadow: none;
 }
