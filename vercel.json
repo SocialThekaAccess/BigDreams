@@ -1,0 +1,120 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/singleService.html",
+      "destination": "/services/skills-assessment-support/",
+      "permanent": true
+    },
+    {
+      "source": "/migrationCode.html",
+      "destination": "/professional-standards/",
+      "permanent": true
+    },
+    {
+      "source": "/blogListing.html",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blogSinglePost.html",
+      "destination": "/blog/choose-the-right-australian-visa-pathway/",
+      "permanent": true
+    },
+    {
+      "source": "/blogTimelinePost.html",
+      "destination": "/blog/moving-to-australia-visa-timeline/",
+      "permanent": true
+    },
+    {
+      "source": "/contactUs.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/clientForm.html",
+      "destination": "/book-a-consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/consultationTerms.html",
+      "destination": "/consultation-terms/",
+      "permanent": true
+    },
+    {
+      "source": "/privacyPolicy.html",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/websiteTermsOfUse.html",
+      "destination": "/website-terms-of-use/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about/",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/services/",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/services/skills-assessment-support/",
+      "destination": "/singleService.html"
+    },
+    {
+      "source": "/professional-standards/",
+      "destination": "/migrationCode.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blogListing.html"
+    },
+    {
+      "source": "/blog/choose-the-right-australian-visa-pathway/",
+      "destination": "/blogSinglePost.html"
+    },
+    {
+      "source": "/blog/moving-to-australia-visa-timeline/",
+      "destination": "/blogTimelinePost.html"
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contactUs.html"
+    },
+    {
+      "source": "/book-a-consultation/",
+      "destination": "/clientForm.html"
+    },
+    {
+      "source": "/consultation-terms/",
+      "destination": "/consultationTerms.html"
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacyPolicy.html"
+    },
+    {
+      "source": "/website-terms-of-use/",
+      "destination": "/websiteTermsOfUse.html"
+    }
+  ]
+}
