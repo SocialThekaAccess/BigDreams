@@ -1,4 +1,4 @@
-const navToggle = document.querySelector(".nav-toggle");
+﻿const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const yearNode = document.querySelector("[data-year]");
 const page = document.body.dataset.page;
@@ -42,10 +42,10 @@ function injectMobileContactBar() {
   const bar = document.createElement('div');
   bar.className = 'mobile-contact-bar';
   bar.innerHTML = `
-    <a class="mobile-contact-btn mobile-contact-btn-call" href="tel:+61476241532" aria-label="Call Big Dream Education &amp; Visa Services">
+    <a class="mobile-contact-btn mobile-contact-btn-call" href="tel:+61476241532" aria-label="Call Big Dream Education and Visa Services">
       <span>Call</span>
     </a>
-    <a class="mobile-contact-btn mobile-contact-btn-whatsapp" href="https://wa.me/61476241532" target="_blank" rel="noreferrer" aria-label="WhatsApp Big Dream Education &amp; Visa Services">
+    <a class="mobile-contact-btn mobile-contact-btn-whatsapp" href="https://wa.me/61476241532" target="_blank" rel="noreferrer" aria-label="WhatsApp Big Dream Education and Visa Services">
       <span>WhatsApp</span>
     </a>
   `;
@@ -383,3 +383,4 @@ function initContactBookingForm() {
 document.addEventListener('DOMContentLoaded', initReviewMarquee);
 document.addEventListener('DOMContentLoaded', injectMobileContactBar);
 document.addEventListener('DOMContentLoaded', initContactBookingForm);
+
