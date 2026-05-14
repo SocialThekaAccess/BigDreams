@@ -2718,3 +2718,48 @@ textarea {
     font-size: 1.1rem;
   }
 }
+
+/* Author block */
+.author-block {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--surface, #f8f9fa);
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--accent, #1a6fc4);
+}
+
+.author-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.author-name {
+  font-weight: 700;
+  margin: 0;
+}
+
+.author-title,
+.author-credentials {
+  font-size: 0.875rem;
+  color: var(--text-muted, #6b7280);
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .author-block {
+    flex-direction: column;
+    text-align: center;
+  }
+}
