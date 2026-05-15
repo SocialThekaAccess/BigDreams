@@ -2723,19 +2723,22 @@ textarea {
 .author-block {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-top: 2.5rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.75rem;
   background: var(--surface, #f8f9fa);
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   border-left: 4px solid var(--accent, #1a6fc4);
 }
 
 .author-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 180px;
+  height: 220px;
+  border-radius: 1rem;
+  object-fit: contain;
+  object-position: center bottom;
+  background: linear-gradient(180deg, #ffffff 0%, #eef3f8 100%);
+  padding: 0.5rem 0.25rem 0 0.25rem;
   flex-shrink: 0;
 }
 
@@ -2761,5 +2764,10 @@ textarea {
   .author-block {
     flex-direction: column;
     text-align: center;
+  }
+
+  .author-photo {
+    width: min(100%, 220px);
+    height: 240px;
   }
 }
