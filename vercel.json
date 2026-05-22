@@ -47,6 +47,11 @@
       "permanent": true
     },
     {
+      "source": "/blogArtMigrationUpdate.html",
+      "destination": "/blog/art-migration-update-on-the-papers-review-process/",
+      "permanent": true
+    },
+    {
       "source": "/contactUs.html",
       "destination": "/contact/",
       "permanent": true
@@ -104,6 +109,10 @@
     {
       "source": "/blog/moving-to-australia-visa-timeline/",
       "destination": "/blogTimelinePost.html"
+    },
+    {
+      "source": "/blog/art-migration-update-on-the-papers-review-process/",
+      "destination": "/blogArtMigrationUpdate.html"
     },
     {
       "source": "/contact/",
