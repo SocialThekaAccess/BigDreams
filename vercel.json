@@ -52,6 +52,16 @@
       "permanent": true
     },
     {
+      "source": "/blogSkillsAssessmentWorks.html",
+      "destination": "/blog/how-skills-assessment-works-for-australian-migration/",
+      "permanent": true
+    },
+    {
+      "source": "/blogBestCoursesPRAustralia.html",
+      "destination": "/blog/best-courses-for-international-students-planning-pr-in-australia/",
+      "permanent": true
+    },
+    {
       "source": "/contactUs.html",
       "destination": "/contact/",
       "permanent": true
@@ -113,6 +123,14 @@
     {
       "source": "/blog/art-migration-update-on-the-papers-review-process/",
       "destination": "/blogArtMigrationUpdate.html"
+    },
+    {
+      "source": "/blog/how-skills-assessment-works-for-australian-migration/",
+      "destination": "/blogSkillsAssessmentWorks.html"
+    },
+    {
+      "source": "/blog/best-courses-for-international-students-planning-pr-in-australia/",
+      "destination": "/blogBestCoursesPRAustralia.html"
     },
     {
       "source": "/contact/",
