@@ -22,6 +22,11 @@
       "permanent": true
     },
     {
+      "source": "/visitorVisas.html",
+      "destination": "/services/visitor-visas-australia/",
+      "permanent": true
+    },
+    {
       "source": "/migrationCode.html",
       "destination": "/professional-standards/",
       "permanent": true
@@ -39,6 +44,21 @@
     {
       "source": "/blogTimelinePost.html",
       "destination": "/blog/moving-to-australia-visa-timeline/",
+      "permanent": true
+    },
+    {
+      "source": "/blogArtMigrationUpdate.html",
+      "destination": "/blog/art-migration-update-on-the-papers-review-process/",
+      "permanent": true
+    },
+    {
+      "source": "/blogSkillsAssessmentWorks.html",
+      "destination": "/blog/how-skills-assessment-works-for-australian-migration/",
+      "permanent": true
+    },
+    {
+      "source": "/blogBestCoursesPRAustralia.html",
+      "destination": "/blog/best-courses-for-international-students-planning-pr-in-australia/",
       "permanent": true
     },
     {
@@ -81,6 +101,10 @@
       "destination": "/singleService.html"
     },
     {
+      "source": "/services/visitor-visas-australia/",
+      "destination": "/visitorVisas.html"
+    },
+    {
       "source": "/professional-standards/",
       "destination": "/migrationCode.html"
     },
@@ -95,6 +119,18 @@
     {
       "source": "/blog/moving-to-australia-visa-timeline/",
       "destination": "/blogTimelinePost.html"
+    },
+    {
+      "source": "/blog/art-migration-update-on-the-papers-review-process/",
+      "destination": "/blogArtMigrationUpdate.html"
+    },
+    {
+      "source": "/blog/how-skills-assessment-works-for-australian-migration/",
+      "destination": "/blogSkillsAssessmentWorks.html"
+    },
+    {
+      "source": "/blog/best-courses-for-international-students-planning-pr-in-australia/",
+      "destination": "/blogBestCoursesPRAustralia.html"
     },
     {
       "source": "/contact/",

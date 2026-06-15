@@ -30,8 +30,9 @@ if (page && siteNav) {
     const navPath = new URL(href, window.location.origin).pathname;
     const normalizedNavPath = navPath === "/" ? navPath : `${navPath.replace(/\/+$/, "")}/`;
     const activePaths = activeNavPaths[page] || [];
+    const isServicesSubpage = page === "single-service" && window.location.pathname.startsWith("/services/");
 
-    if (activePaths.includes(normalizedNavPath)) {
+    if (activePaths.includes(normalizedNavPath) || (isServicesSubpage && normalizedNavPath === "/services/")) {
       link.classList.add("is-active");
     }
   }
