@@ -133,6 +133,14 @@
       "destination": "/blogBestCoursesPRAustralia.html"
     },
     {
+      "source": "/blog/australia-immigration-consultant-perth-visa-success/",
+      "destination": "/blog/australia-immigration-consultant-perth-visa-success/index.html"
+    },
+    {
+      "source": "/blog/australia-student-visa-consultant-perth/",
+      "destination": "/blog/australia-student-visa-consultant-perth/index.html"
+    },
+    {
       "source": "/contact/",
       "destination": "/contactUs.html"
     },
