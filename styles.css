@@ -919,6 +919,25 @@ button.btn {
 .info-stack {
   display: grid;
   gap: 1rem;
+  align-content: start;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.inline-link {
+  color: var(--navy);
+  background: rgba(23, 49, 79, 0.1);
+  border-bottom: 2px solid var(--gold);
+  padding: 0 3px 1px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.inline-link:hover {
+  background: var(--navy);
+  color: #ffffff;
 }
 
 .info-card {
@@ -1781,6 +1800,12 @@ textarea {
 
 .hero-photo {
   min-height: 320px;
+}
+
+.hero-photo-contain {
+  object-fit: contain;
+  object-position: center center;
+  background: #eef3f7;
 }
 
 .hero-photo-full {
