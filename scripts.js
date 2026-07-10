@@ -391,7 +391,40 @@ function initContactBookingForm() {
   populatePreferredTimeSlots();
 }
 
+function initClickableBlogCards() {
+  const blogCards = document.querySelectorAll('.blog-card');
+  
+  blogCards.forEach((card) => {
+    const link = card.querySelector('.text-link');
+    
+    if (link) {
+      card.style.cursor = 'pointer';
+      
+      card.addEventListener('click', (event) => {
+        // Don't trigger if clicking directly on the link
+        if (event.target.closest('.text-link')) {
+          return;
+        }
+        
+        // Navigate to the blog post
+        window.location.href = link.href;
+      });
+      
+      // Add hover effect
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-4px)';
+        card.style.transition = 'transform 0.2s ease';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', initReviewMarquee);
 document.addEventListener('DOMContentLoaded', injectMobileContactBar);
 document.addEventListener('DOMContentLoaded', initContactBookingForm);
+document.addEventListener('DOMContentLoaded', initClickableBlogCards);
 

@@ -2812,3 +2812,26 @@ textarea {
     height: 240px;
   }
 }
+
+
+/* Article content links styling */
+.article-card p a,
+.article-card li a,
+.article-card a:not(.btn):not(.text-link) {
+  color: #0066cc;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  font-weight: 500;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.article-card p a:hover,
+.article-card li a:hover {
+  color: #004499;
+  text-decoration-color: var(--gold);
+}
+
+.article-card p a:visited,
+.article-card li a:visited {
+  color: #551A8B;
+}
