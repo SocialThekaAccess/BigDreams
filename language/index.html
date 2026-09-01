@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LANGUAGECERT | Big Dream Education and Visa Services</title>
+  <meta name="description" content="Join our language training team or apply for language examination certification.">
+  <link rel="canonical" href="https://www.bigdreamvisa.com.au/language/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/scripts.js"></script>
+  <style>
+    .language-hero {
+      background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .language-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    .language-hero p {
+      font-size: 1.2rem;
+      opacity: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      color: white;
+    }
+    .language-options {
+      padding: 60px 0;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .option-card {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .option-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .option-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #d4a253 0%, #b8893e 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.5rem;
+    }
+    .option-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #1a365d;
+    }
+    .option-card p {
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .option-card .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #d4a253 0%, #b8893e 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+    }
+    .option-card .btn:hover {
+      opacity: 0.9;
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-header {
+      background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+      color: white;
+      padding: 25px 30px;
+      border-radius: 12px 12px 0 0;
+    }
+    .modal-header h2 {
+      margin: 0;
+      color: white;
+      font-size: 1.8rem;
+    }
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      line-height: 1;
+    }
+    .close-modal:hover {
+      opacity: 0.7;
+    }
+    .modal-body {
+      padding: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #1a365d;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #d4a253;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, #d4a253 0%, #b8893e 100%);
+      color: white;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.3s ease;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+    .required {
+      color: #e53e3e;
+    }
+  </style>
+</head>
+<body data-page="language">
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="/" aria-label="Big Dream Education and Visa Services home">
+        <img src="/assets/528_176logo.png" alt="Big Dream Education and Visa Services logo" decoding="async" width="132" height="44">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/services/">Services</a>
+        <a href="/professional-standards/">Our Professional Standards</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+        <a href="/language/">LANGUAGECERT</a>
+        <a class="btn btn-sm" href="/book-a-consultation/">Book a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="language-hero">
+      <div class="container">
+        <h1>LANGUAGECERT</h1>
+        <p>Join our team of language trainers or apply for language examination certification</p>
+      </div>
+    </section>
+
+    <section class="language-options">
+      <div class="container">
+        <div class="options-grid">
+          <div class="option-card">
+            <div class="option-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>Join as a Trainer</h3>
+            <p>Become part of our language training team. Share your expertise and help students achieve their language goals.</p>
+            <button class="btn" onclick="openTrainerForm()">Apply as Trainer</button>
+          </div>
+
+          <div class="option-card">
+            <div class="option-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>Apply for Examination</h3>
+            <p>Register for our language examination and get certified. Take the next step in your language proficiency journey.</p>
+            <a href="/language/examination/" class="btn">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #f7f9fc 0%, #e8f0f7 100%);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <h2 style="font-size: 2.5rem; color: #1a365d; margin-bottom: 15px;">About LANGUAGECERT</h2>
+          <p style="font-size: 1.2rem; color: #4a5568; max-width: 800px; margin: 0 auto;">Internationally recognized English language testing approved for Australian visa applications</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;">
+          <div style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 4px solid #d4a253;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a253" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3 style="color: #1a365d; font-size: 1.4rem; margin: 0;">Globally Trusted</h3>
+            </div>
+            <p style="color: #4a5568; line-height: 1.7; margin: 0;">LANGUAGECERT is recognized worldwide as a premier language assessment provider, trusted by governments, institutions, and employers across the globe.</p>
+          </div>
+
+          <div style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 4px solid #d4a253;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a253" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <h3 style="color: #1a365d; font-size: 1.4rem; margin: 0;">Australian Government Approved</h3>
+            </div>
+            <p style="color: #4a5568; line-height: 1.7; margin: 0;">Officially approved by the Australian Government for all visa and migration purposes, ensuring your test results are accepted nationwide.</p>
+          </div>
+
+          <div style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 4px solid #d4a253;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a253" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <h3 style="color: #1a365d; font-size: 1.4rem; margin: 0;">Fast Results</h3>
+            </div>
+            <p style="color: #4a5568; line-height: 1.7; margin: 0;">Receive your test results quickly and efficiently, allowing you to proceed with your visa application without unnecessary delays.</p>
+          </div>
+        </div>
+
+        <div style="background: white; padding: 50px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid #e8f0f7;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: #1a365d;">Why Choose LANGUAGECERT?</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 35px;">
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">150+</div>
+              <p style="margin: 0; color: #4a5568; font-weight: 600;">Test Centres Worldwide</p>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">100%</div>
+              <p style="margin: 0; color: #4a5568; font-weight: 600;">Government Approved</p>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">24/7</div>
+              <p style="margin: 0; color: #4a5568; font-weight: 600;">Online Support</p>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">48hrs</div>
+              <p style="margin: 0; color: #4a5568; font-weight: 600;">Result Delivery</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Trainer Form Modal -->
+  <div id="trainerModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Join as a Language Trainer</h2>
+        <button class="close-modal" onclick="closeTrainerForm()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="trainerForm" onsubmit="submitTrainerForm(event)">
+          <div class="form-group">
+            <label for="trainerName">Full Name <span class="required">*</span></label>
+            <input type="text" id="trainerName" name="trainerName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City <span class="required">*</span></label>
+            <input type="text" id="city" name="city" required>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country <span class="required">*</span></label>
+            <select id="country" name="country" required>
+              <option value="">Select Country</option>
+              <option value="Australia">Australia</option>
+              <option value="India">India</option>
+              <option value="Canada">Canada</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Training Experience (in years) <span class="required">*</span></label>
+            <input type="number" id="experience" name="experience" min="0" max="50" required>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand-block">
+      <a class="brand brand-footer" href="/">
+          <img src="/assets/bdFinalLogo.svg" alt="Big Dream Education and Visa Services logo">
+      </a>
+      <p>Big Dream Education and Visa Services offers trusted migration and education guidance for clients in Perth and beyond.</p>
+      <div class="footer-social">
+        <p class="social-handle">@bigdreamvisa</p>
+        <div class="social-links" aria-label="Social media links">
+          <a class="social-link" href="https://www.facebook.com/bigdreamvisa" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H16.8V4.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.3V11H7.5v3h2.8v8h3.2Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/bigdreamvisa" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.5 1.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.1a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/@BigDreamEducationVisaServices" target="_blank" rel="noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.6 7.2a2.9 2.9 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.9 2.9 0 0 0-2 2A30 30 0 0 0 2 12a30 30 0 0 0 .4 4.8 2.9 2.9 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.9 2.9 0 0 0 2-2A30 30 0 0 0 22 12a30 30 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/big-dream-education-and-visa-services-b102a6287/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.8 3.5a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8ZM3.2 8.7H6.4V20H3.2V8.7Zm5 0h3v1.5h.1c.4-.8 1.6-1.8 3.2-1.8 3.4 0 4 2.2 4 5.2V20h-3.2v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V20H8.2V8.7Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@bigdreamvisa" target="_blank" rel="noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.8 3c.2 1.5 1.1 2.8 2.4 3.5.8.5 1.7.7 2.6.7v2.7c-1.3 0-2.6-.4-3.7-1v6c0 3-2.4 5.4-5.4 5.4S5.3 18.9 5.3 16s2.4-5.4 5.4-5.4c.3 0 .6 0 .9.1v2.8a2.9 2.9 0 0 0-3.5 2.8c0 1.6 1.3 2.8 2.8 2.8s2.8-1.2 2.8-2.8V3h3.1Z"/></svg>
+          </a>
+          <a class="social-link" href="https://wa.me/61476241532" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11.8A8 8 0 0 0 6.4 6.2a8 8 0 0 0-1.1 9.6L4 20l4.4-1.2A8 8 0 1 0 20 11.8Zm-8 6.5c-1.2 0-2.4-.3-3.4-1l-.2-.1-2.6.7.7-2.5-.2-.3A6 6 0 1 1 12 18.3Zm3.3-4.5-.9-.4c-.1 0-.3 0-.4.1l-.4.5c-.1.1-.3.2-.5.1a5.5 5.5 0 0 1-2.7-2.4c-.1-.2-.1-.4 0-.5l.3-.4c.1-.1.1-.3 0-.4l-.4-.9c-.1-.2-.3-.3-.5-.3h-.4c-.1 0-.3 0-.4.2a1.9 1.9 0 0 0-.6 1.4c0 .8.5 1.6.6 1.7a7.2 7.2 0 0 0 2.9 2.7c1.8.8 1.8.5 2.1.5.3 0 1.1-.4 1.2-.8.2-.4.2-.8.2-.8s-.1 0-.2-.1Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>2/3 Lawrence Avenue, West Perth WA 6005</p>
+      <p><a href="tel:+61476241532">+61 476 241 532</a></p>
+      <p><a href="mailto:admin@bigdreamvisa.com.au">admin@bigdreamvisa.com.au</a></p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="/about/">About</a></p>
+      <p><a href="/services/">Services</a></p>
+      <p><a href="/blog/">Blog</a></p>
+      <p><a href="/contact/">Contact Us</a></p>
+    </div>
+    <div>
+      <h3>Compliance</h3>
+      <p>MARN: 2619304</p>
+      <p>QEAC No: 11937</p>
+      <p>ABN: 11 669 816 479</p>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <p><a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noreferrer">Registered Migration Agent</a></p>
+      <p><a href="https://www.legislation.gov.au/F2021L01856/latest/text" target="_blank" rel="noreferrer">Migration Code of Conduct</a></p>
+      <p><a href="https://www.mara.gov.au/get-help-visa-subsite/FIles/consumer_guide_english.pdf" target="_blank" rel="noreferrer">Migration Agent Consumer Guide</a></p>
+        <p><a href="/consultation-terms/">Terms and Conditions</a></p>
+        <p><a href="/privacy-policy/">Privacy Policy</a></p>
+        <p><a href="/website-terms-of-use/">Website Terms of Use</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+<p>&copy; <span data-year></span> Big Dream Education and Visa Services. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    function openTrainerForm() {
+      document.getElementById('trainerModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTrainerForm() {
+      document.getElementById('trainerModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('trainerModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeTrainerForm();
+      }
+    });
+
+    function submitTrainerForm(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      console.log('Trainer Application Submitted:', data);
+      
+      alert('Thank you for your application! We will review your information and contact you soon.');
+      
+      event.target.reset();
+      closeTrainerForm();
+      
+      // Here you can add code to send data to backend
+      // fetch('/api/trainer-application', {
+      //   method: 'POST',
+      //   body: JSON.stringify(data)
+      // });
+    }
+  </script>
+</body>
+</html>
