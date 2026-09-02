@@ -83,110 +83,6 @@
     .option-card .btn:hover {
       opacity: 0.9;
     }
-    
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      overflow-y: auto;
-    }
-    .modal.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-content {
-      background: white;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
-    .modal-header {
-      background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-      color: white;
-      padding: 25px 30px;
-      border-radius: 12px 12px 0 0;
-    }
-    .modal-header h2 {
-      margin: 0;
-      color: white;
-      font-size: 1.8rem;
-    }
-    .close-modal {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      line-height: 1;
-    }
-    .close-modal:hover {
-      opacity: 0.7;
-    }
-    .modal-body {
-      padding: 30px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #1a365d;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #d4a253;
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .submit-btn {
-      background: linear-gradient(135deg, #d4a253 0%, #b8893e 100%);
-      color: white;
-      padding: 14px 40px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      transition: opacity 0.3s ease;
-    }
-    .submit-btn:hover {
-      opacity: 0.9;
-    }
-    .required {
-      color: #e53e3e;
-    }
   </style>
 </head>
 <body data-page="language">
@@ -217,29 +113,20 @@
     <section class="language-hero">
       <div class="container">
         <h1>LANGUAGECERT</h1>
-        <p>Join our team of language trainers or apply for language examination certification</p>
+        <p>Apply for language examination certification and achieve your English proficiency goals</p>
       </div>
     </section>
 
     <section class="language-options">
       <div class="container">
         <div class="options-grid">
-          <div class="option-card">
-            <div class="option-icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <h3>Join as a Trainer</h3>
-            <p>Become part of our language training team. Share your expertise and help students achieve their language goals.</p>
-            <button class="btn" onclick="openTrainerForm()">Apply as Trainer</button>
-          </div>
-
-          <div class="option-card">
+          <div class="option-card" style="max-width: 500px; margin: 0 auto;">
             <div class="option-icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3>Apply for Examination</h3>
-            <p>Register for our language examination and get certified. Take the next step in your language proficiency journey.</p>
-            <a href="/language/examination/" class="btn">Apply Now</a>
+            <h3>Book Your Examination</h3>
+            <p>Register for our LANGUAGECERT examination and get certified. Take the next step in your language proficiency journey with exclusive Big Dream discounts.</p>
+            <a href="/language/examination/" class="btn">Book Your Exam</a>
           </div>
         </div>
       </div>
@@ -290,62 +177,14 @@
               <p style="margin: 0; color: #4a5568; font-weight: 600;">Government Approved</p>
             </div>
             <div>
-              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">24/7</div>
-              <p style="margin: 0; color: #4a5568; font-weight: 600;">Online Support</p>
-            </div>
-            <div>
-              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">48hrs</div>
-              <p style="margin: 0; color: #4a5568; font-weight: 600;">Result Delivery</p>
+              <div style="font-size: 2.5rem; font-weight: 700; color: #d4a253; margin-bottom: 10px;">5 Days</div>
+              <p style="margin: 0; color: #4a5568; font-weight: 600;">Result Delivery (Typically 3)</p>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Trainer Form Modal -->
-  <div id="trainerModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Join as a Language Trainer</h2>
-        <button class="close-modal" onclick="closeTrainerForm()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form id="trainerForm" onsubmit="submitTrainerForm(event)">
-          <div class="form-group">
-            <label for="trainerName">Full Name <span class="required">*</span></label>
-            <input type="text" id="trainerName" name="trainerName" required>
-          </div>
-
-          <div class="form-group">
-            <label for="city">City <span class="required">*</span></label>
-            <input type="text" id="city" name="city" required>
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country <span class="required">*</span></label>
-            <select id="country" name="country" required>
-              <option value="">Select Country</option>
-              <option value="Australia">Australia</option>
-              <option value="India">India</option>
-              <option value="Canada">Canada</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="United States">United States</option>
-              <option value="New Zealand">New Zealand</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="experience">Training Experience (in years) <span class="required">*</span></label>
-            <input type="number" id="experience" name="experience" min="0" max="50" required>
-          </div>
-
-          <button type="submit" class="submit-btn">Submit Application</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <footer class="site-footer">
   <div class="container footer-grid">
@@ -412,43 +251,5 @@
   </div>
 </footer>
 
-  <script>
-    function openTrainerForm() {
-      document.getElementById('trainerModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeTrainerForm() {
-      document.getElementById('trainerModal').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Close modal when clicking outside
-    document.getElementById('trainerModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeTrainerForm();
-      }
-    });
-
-    function submitTrainerForm(event) {
-      event.preventDefault();
-      
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      
-      console.log('Trainer Application Submitted:', data);
-      
-      alert('Thank you for your application! We will review your information and contact you soon.');
-      
-      event.target.reset();
-      closeTrainerForm();
-      
-      // Here you can add code to send data to backend
-      // fetch('/api/trainer-application', {
-      //   method: 'POST',
-      //   body: JSON.stringify(data)
-      // });
-    }
-  </script>
 </body>
 </html>
