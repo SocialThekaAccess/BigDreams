@@ -265,6 +265,22 @@
       font-size: 1rem;
       height: 1.5rem;
     }
+    .stack-mobile { flex-wrap: wrap; }
+    select.input-line {
+      border: none;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      background: transparent;
+      padding: 0.15rem 0.25rem;
+      font-size: 0.95rem;
+      color: #000;
+      width: 100%;
+    }
+    select.input-line:focus { outline: none; border-bottom: 2px solid var(--gold); }
+    .input-group label { flex-shrink: 0; }
+    .form-panel-heading { margin: 1.5rem 0 1rem; }
+    .form-panel-heading h3 { font-size: 1.1rem; color: #1a365d; margin: 0 0 0.25rem; }
+    .form-panel-heading p { font-size: 0.9rem; color: #475569; margin: 0; }
   </style>
 </head>
 <body data-page="client-form">
@@ -320,55 +336,92 @@
             <form id="client-form" action="https://formsubmit.co/ajax/b0874a53ad35e26f8e4b2b9d612b9789" method="POST">
               <input type="hidden" name="_subject" value="New Client Information Form Submission">
               <input type="hidden" name="_captcha" value="false">
-              
+              <input type="hidden" name="_autoresponse" value="Thank you for contacting Big Dream Education and Visa Services. We have received your consultation request and our team will contact you to confirm your booking time.">
+
+              <p class="booking-eyebrow" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a9823e;margin:0 0 1rem;">Booking Time</p>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Preferred booking</div>
+                  <div class="row-content">
+                    <p style="font-size:0.9rem;color:#475569;margin:0 0 0.75rem;padding:0.75rem 1rem;background:rgba(200,162,96,0.08);border-radius:8px;">Consultations are 60 minutes. Preferred appointments are available Monday to Friday between 9:00 AM and 6:00 PM AWST. Our team will get in touch with you for final confirmation of the booking time.</p>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label for="consultation-type">Consultation Type</label>
+                        <select id="consultation-type" class="input-line" name="Consultation Type" required>
+                          <option value="">Select consultation type</option>
+                          <option value="In Person">In Person</option>
+                          <option value="Phone Call">Phone Call</option>
+                          <option value="Video Call">Video Call</option>
+                        </select>
+                      </div>
+                      <div class="input-group">
+                        <label for="consultation-duration">Approved Duration</label>
+                        <input id="consultation-duration" type="text" class="input-line" name="Consultation Duration" value="60 minutes" readonly>
+                      </div>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label for="booking-date">Preferred Date of Meeting</label>
+                        <select id="booking-date" class="input-line" name="Preferred Consultation Date" required>
+                          <option value="">Select preferred date</option>
+                        </select>
+                      </div>
+                      <div class="input-group">
+                        <label for="booking-slot">Preferred Time of Meeting</label>
+                        <select id="booking-slot" class="input-line" name="Preferred Consultation Time" required>
+                          <option value="">Select preferred time</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p id="booking-status" style="margin:0;padding:0.9rem 1rem;border-radius:14px;background:rgba(200,162,96,0.12);color:#17314f;font-size:0.92rem;line-height:1.5;">Choose your preferred date and time in AWST. Our team will contact you to confirm the final appointment time.</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="booking-eyebrow" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a9823e;margin:1.5rem 0 1rem;">Your Information</p>
+
               <div class="form-section">
                 <div class="paper-row">
                   <div class="row-label">Name</div>
                   <div class="row-content">
-                    <div class="form-row">
+                    <div class="form-row stack-mobile">
                       <div class="input-group">
-                        <label>Full Name:</label>
-                        <input type="text" class="input-line" name="Full Name" required>
+                        <label>Title</label>
+                        <div class="radio-group">
+                          <label><input type="radio" name="Title" value="Mr" required> Mr</label>
+                          <label><input type="radio" name="Title" value="Mrs"> Mrs</label>
+                          <label><input type="radio" name="Title" value="Ms"> Ms</label>
+                          <label><input type="radio" name="Title" value="Miss"> Miss</label>
+                          <label><input type="radio" name="Title" value="Other"> Other</label>
+                        </div>
                       </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row stack-mobile">
                       <div class="input-group">
-                        <label>Date of Birth:</label>
+                        <label>First Name</label>
+                        <input type="text" class="input-line" name="First Name" required>
+                      </div>
+                      <div class="input-group">
+                        <label>Surname</label>
+                        <input type="text" class="input-line" name="Surname" required>
+                      </div>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Date of Birth</label>
                         <input type="date" class="input-line" name="Date of Birth" required>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-section">
-                <div class="paper-row" style="align-items: center;">
-                  <div class="row-label">Contact</div>
-                  <div class="row-content">
-                    <div class="form-row">
                       <div class="input-group">
-                        <label>Mobile:</label>
-                        <input type="tel" class="input-line" name="Mobile" required>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="input-group">
-                        <label>Email:</label>
-                        <input type="email" class="input-line" name="Email" required>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-section">
-                <div class="paper-row" style="align-items: center;">
-                  <div class="row-label">Nationality</div>
-                  <div class="row-content">
-                    <div class="form-row">
-                      <div class="input-group">
-                        <label>Country:</label>
-                        <input type="text" class="input-line" name="Country" required>
+                        <label>Marital Status</label>
+                        <select class="input-line" name="Marital Status" required>
+                          <option value="">Select marital status</option>
+                          <option value="Single">Single</option>
+                          <option value="Married">Married</option>
+                          <option value="De-Facto">De-Facto</option>
+                          <option value="Separated">Separated</option>
+                          <option value="Divorced">Divorced</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -377,18 +430,16 @@
 
               <div class="form-section">
                 <div class="paper-row">
-                  <div class="row-label">Current Visa</div>
+                  <div class="row-label">Contact</div>
                   <div class="row-content">
-                    <div class="form-row">
+                    <div class="form-row stack-mobile">
                       <div class="input-group">
-                        <label>Subclass:</label>
-                        <input type="text" class="input-line" name="Current Visa Subclass">
+                        <label>Mobile Number</label>
+                        <input type="tel" class="input-line" name="Mobile Number" required>
                       </div>
-                    </div>
-                    <div class="form-row">
                       <div class="input-group">
-                        <label>Expires on:</label>
-                        <input type="date" class="input-line" name="Visa Expiry Date">
+                        <label>Email Address</label>
+                        <input type="email" class="input-line" name="Email Address" required>
                       </div>
                     </div>
                   </div>
@@ -396,9 +447,108 @@
               </div>
 
               <div class="form-section">
-                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: #000;">What can we help you with?</div>
-                <textarea class="input-line" style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; width: 100%; resize: vertical; min-height: 120px;" rows="5" name="Enquiry Details" placeholder="Please describe your visa or migration enquiry..." required></textarea>
+                <div class="paper-row">
+                  <div class="row-label">Home Address</div>
+                  <div class="row-content">
+                    <div class="input-group">
+                      <label>Home Address</label>
+                      <input type="text" class="input-line" name="Home Address" required>
+                    </div>
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Postcode</label>
+                        <input type="text" class="input-line" name="Postcode" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Nationality</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Country</label>
+                        <input type="text" class="input-line" name="Nationality Country" required>
+                      </div>
+                      <div class="input-group">
+                        <label>Passport No</label>
+                        <input type="text" class="input-line" name="Passport No" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Education</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Name of Qualification</label>
+                        <input type="text" class="input-line" name="Qualification Name">
+                      </div>
+                      <div class="input-group">
+                        <label>College / University</label>
+                        <input type="text" class="input-line" name="College or University">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Occupation</div>
+                  <div class="row-content">
+                    <div class="input-group">
+                      <label>Occupation (Chef, Manager, Electrician)</label>
+                      <input type="text" class="input-line" name="Occupation">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="booking-eyebrow" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a9823e;margin:1.5rem 0 1rem;">Consultation Details</p>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">Current visa</div>
+                  <div class="row-content">
+                    <div class="form-row stack-mobile">
+                      <div class="input-group">
+                        <label>Subclass</label>
+                        <input type="text" class="input-line" name="Current Visa Subclass">
+                      </div>
+                      <div class="input-group">
+                        <label>Expired on</label>
+                        <input type="date" class="input-line" name="Current Visa Expired On">
+                      </div>
+                      <div class="input-group">
+                        <label>Conditions</label>
+                        <input type="text" class="input-line" name="Current Visa Conditions">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="paper-row">
+                  <div class="row-label">How can we help?</div>
+                  <div class="row-content">
+                    <div class="input-group">
+                      <label>Any relevant migration issues/queries or how can we help you</label>
+                      <textarea class="input-line" style="border:1px solid #cbd5e1;border-radius:6px;padding:0.75rem;width:100%;resize:vertical;min-height:120px;" rows="4" name="Migration Issues or Help Needed"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="booking-eyebrow" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a9823e;margin:1.5rem 0 1rem;">Declarations</p>
 
               <div class="form-section" style="border-bottom: none;">
                 <div class="declaration-content">
@@ -406,11 +556,11 @@
                     <input type="checkbox" name="Declaration" required>
                     <span>I understand that this consultation is to assess my situation and determine how Big Dream Education and Visa Services can assist me. I am not a client until a formal engagement contract is signed.</span>
                   </label>
-                  
-                  <div class="signature-row" style="margin-top: 2rem;">
+
+                  <div class="signature-row">
                     <div class="sig-input-group">
                       <label>Date:</label>
-                      <input type="date" class="input-line" name="Declaration Date" required style="width: 150px;">
+                      <input type="date" class="input-line" name="Declaration Date" required style="width:150px;">
                     </div>
                     <div class="sig-input-group flex-grow">
                       <label>Signature:</label>
