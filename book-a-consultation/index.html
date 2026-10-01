@@ -6,8 +6,8 @@
   <title>Book a Consultation | Big Dream Education and Visa Services</title>
   <meta name="description" content="Book a consultation with Big Dream Education and Visa Services for migration and visa guidance.">
   <link rel="canonical" href="https://www.bigdreamvisa.com.au/book-a-consultation/">
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Book a Consultation | Big Dream Education and Visa Services">
   <meta property="og:description" content="Book a consultation with Big Dream Education and Visa Services for migration and visa guidance.">
@@ -23,8 +23,8 @@
       "description": "Book a consultation with Big Dream Education and Visa Services for migration and visa guidance."
     }
   </script>
-  <link rel="stylesheet" href="/styles.css">
-  <script defer src="/scripts.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../scripts.js"></script>
   <style>
     .paper-form {
       background: #fff;
@@ -300,8 +300,8 @@
 <body data-page="client-form">
   <header class="site-header">
     <div class="container nav-shell">
-      <a class="brand" href="/" aria-label="Big Dream Education and Visa Services home">
-        <img src="/assets/528_176logo.png" alt="Big Dream Education and Visa Services logo" decoding="async" width="132" height="44">
+      <a class="brand" href="../index.html" aria-label="Big Dream Education and Visa Services home">
+        <img src="../assets/528_176logo.png" alt="Big Dream Education and Visa Services logo" decoding="async" width="132" height="44">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span>
@@ -309,14 +309,14 @@
         <span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/services/">Services</a>
-        <a href="/professional-standards/">Our Professional Standards</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contact</a>
-        <a href="/language/">LANGUAGECERT</a>
-        <a class="btn btn-sm" href="/book-a-consultation/">Book a Consultation</a>
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="../services/index.html">Services</a>
+        <a href="../professional-standards/index.html">Our Professional Standards</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../contact/index.html">Contact</a>
+        <a href="../language/index.html">LANGUAGECERT</a>
+        <a class="btn btn-sm" href="../book-a-consultation/index.html">Book a Consultation</a>
       </nav>
     </div>
   </header>
@@ -328,7 +328,7 @@
         <div class="paper-form">
           <div class="paper-header-wrapper">
             <div class="paper-logo-area">
-            <img src="/assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education and Visa Services logo" decoding="async">
+            <img src="../assets/bdFinalLogo(132 x 44 px).svg" alt="Big Dream Education and Visa Services logo" decoding="async">
               <div style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px; text-align: left;">
       <span style="font-size: 1.2rem; font-weight: 800; color: #a9823e; line-height: 1;">BIG DREAM EDUCATION AND VISA SERVICES</span>
                 <span style="font-size: 0.65rem; font-weight: 600; color: #1e293b; letter-spacing: 0.5px;">Education and Visa Services</span>
@@ -514,7 +514,21 @@
                   <div class="signature-row" style="margin-top: 2rem;">
                     <div class="sig-input-group">
                       <label>Date:</label>
-                      <input type="date" class="input-line" name="Declaration Date" required style="width: 150px;">
+                      <div style="position:relative; display:inline-flex; align-items:center; gap:6px;">
+                        <input type="text" class="input-line" name="Declaration Date" id="declaration-date" 
+                          placeholder="dd-mm-yyyy" required readonly
+                          style="width:150px; cursor:pointer; background:transparent;"
+                          onclick="openGoogleCalendar(this)">
+                        <svg onclick="openGoogleCalendar(document.getElementById('declaration-date'))" 
+                          style="cursor:pointer; color:#a9823e; flex-shrink:0;" 
+                          xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" 
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                          <line x1="16" y1="2" x2="16" y2="6"></line>
+                          <line x1="8" y1="2" x2="8" y2="6"></line>
+                          <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                      </div>
                     </div>
                     <div class="sig-input-group flex-grow">
                       <label style="display: block; margin-bottom: 0.5rem;">Client Signature:</label>
@@ -524,7 +538,23 @@
                 </div>
               </div>
 
+              <!-- Book Time Slot + Submit -->
               <div style="text-align: center; margin-top: 3rem;">
+                <div style="margin-bottom: 1.25rem;">
+                  <a href="https://buy.stripe.com/6oUcN77g1cFjdR15th5AQ00" 
+                     target="_blank" rel="noopener noreferrer" 
+                     style="display: inline-flex; align-items: center; gap: 0.6rem; background: #fff; color: #1a365d; border: 2px solid #1a365d; padding: 0.85rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.2s ease;"
+                     onmouseover="this.style.background='#1a365d';this.style.color='#fff';"
+                     onmouseout="this.style.background='#fff';this.style.color='#1a365d';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Book Your Time Slot with Payment
+                  </a>
+                </div>
                 <button id="submit-btn" class="btn" type="submit" style="padding: 1rem 3rem; font-size: 1.1rem; border-radius: 8px;">Submit Consultation Request</button>
               </div>
 
@@ -539,8 +569,8 @@
   <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand-block">
-      <a class="brand brand-footer" href="/">
-          <img src="/assets/bdFinalLogo.svg" alt="Big Dream Education and Visa Services logo">
+      <a class="brand brand-footer" href="../index.html">
+          <img src="../assets/bdFinalLogo.svg" alt="Big Dream Education and Visa Services logo">
       </a>
       <p>Big Dream Education and Visa Services offers trusted migration and education guidance for clients in Perth and beyond.</p>
       <div class="footer-social">
@@ -575,10 +605,10 @@
     </div>
     <div>
       <h3>Quick Links</h3>
-      <p><a href="/about/">About</a></p>
-      <p><a href="/services/">Services</a></p>
-      <p><a href="/blog/">Blog</a></p>
-      <p><a href="/contact/">Contact Us</a></p>
+      <p><a href="../about/index.html">About</a></p>
+      <p><a href="../services/index.html">Services</a></p>
+      <p><a href="../blog/index.html">Blog</a></p>
+      <p><a href="../contact/index.html">Contact Us</a></p>
     </div>
     <div>
       <h3>Compliance</h3>
@@ -591,9 +621,9 @@
       <p><a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noreferrer">Registered Migration Agent</a></p>
       <p><a href="https://www.legislation.gov.au/F2021L01856/latest/text" target="_blank" rel="noreferrer">Migration Code of Conduct</a></p>
       <p><a href="https://www.mara.gov.au/get-help-visa-subsite/FIles/consumer_guide_english.pdf" target="_blank" rel="noreferrer">Migration Agent Consumer Guide</a></p>
-        <p><a href="/consultation-terms/">Terms and Conditions</a></p>
-        <p><a href="/privacy-policy/">Privacy Policy</a></p>
-        <p><a href="/website-terms-of-use/">Website Terms of Use</a></p>
+        <p><a href="../consultation-terms/index.html">Terms and Conditions</a></p>
+        <p><a href="../privacy-policy/index.html">Privacy Policy</a></p>
+        <p><a href="../website-terms-of-use/index.html">Website Terms of Use</a></p>
     </div>
   </div>
   <div class="container footer-bottom">
@@ -602,5 +632,11 @@
 </footer>
 
 
+  <script>
+    function openGoogleCalendar(inputEl) {
+      window.open('https://calendly.com/bigdreamvisa', '_blank');
+    }
+    }
+  </script>
 </body>
 </html>
