@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 900px; height: 180px; overflow: hidden; }
+    .banner {
+      width: 900px;
+      height: 180px;
+      background: linear-gradient(135deg, #17314f 0%, #1a4a7a 30%, #2563a8 55%, #c8a260 80%, #e8c987 100%);
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      transform: scaleX(1.5);
+    }
+    .logo-side {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      background: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-right: 40px;
+    }
+    .logo-side img {
+      height: 80px;
+      width: auto;
+    }
+    .details-side {
+      flex: 1;
+      text-align: center;
+    }
+    .details-side p {
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .details-side p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="logo-side">
+      <img src="https://www.bigdreamvisa.com.au/assets/528_176logo.png" alt="Big Dream Education & Visa Services">
+    </div>
+    <div class="details-side">
+      <p>ADDRESS: 2/3 Lawrence Avenue, West Perth WA 6005</p>
+      <p>EMAIL: admin@bigdreamvisa.com.au</p>
+      <p>PHONE: +61 476 241 532</p>
+      <p>ABN: 11 669 816 479</p>
+    </div>
+  </div>
+</body>
+</html>
